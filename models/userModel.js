@@ -34,7 +34,6 @@ function getUserById(id, callback) {
 
       if (err) {
 
-         console.log(error);
          console.log(err);
          callback(err, "Erro with DB");
       }
