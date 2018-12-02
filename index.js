@@ -9,7 +9,8 @@ var app = express();
 
 app.use(express.static(path.join(__dirname + "/public")));
 app.use(express.json());
-app.use(express.urlencoded({extented:true}));
+
+app.use(express.urlencoded({ extented: true })); //{extented:true}
 
 app.get("/user", userController.getUserById);
 
