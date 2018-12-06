@@ -25,7 +25,7 @@ function getSportById(id, callback) {
 
    console.log("searching db with: " + id);
 
-   var sql = 'SELECT * FROM sports WHERE user_id = $1::int';
+   var sql = 'SELECT * FROM sports WHERE id = $1::int';
 
    var params = [id];
 

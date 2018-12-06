@@ -21,7 +21,7 @@ function searchSportById() {
    // body...
     console.log("searchSportById");
 
-   var userId = $("#sportId").val();
+   var sportId = $("#sportId").val();
    console.log("sportId: " + sportId);
 
    $.get("/sport", {sportId: sportId}, function(data) {
