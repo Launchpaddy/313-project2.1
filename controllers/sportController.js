@@ -12,7 +12,7 @@ function getAllUsersSports(req, res) {
 function getSportById(req, res) {
 
    var sportId = req.body.sportId;
-   sportModel.getsportById(sportId, function(error,result) {
+   sportModel.getSportById(sportId, function(error,result) {
       res.json(result);
    });
 

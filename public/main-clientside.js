@@ -16,6 +16,7 @@ function searchUserById() {
    });
 }
 
+
 function searchSportById() {
    // body...
     console.log("searchSportById");
@@ -29,7 +30,7 @@ function searchSportById() {
 
       for (var i = 0; i < data.length ; i++) {
          var sports = data[i];
-         $("#ulUsers").append("<li>" + sports.id + " " + sports.display_name +"</li>");
+         $("#ulUsers").append("<li>" + sports.id + " " + sports.name +"</li>");
          console.log(sports);
       }
    });
