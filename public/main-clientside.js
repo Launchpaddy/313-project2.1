@@ -1,10 +1,12 @@
+//const sportController = require("./controllers/sportController");
+
 function searchUserById() {
    // body...
    console.log("searchUserById");
    var userId = $("#userId").val();
    console.log("userId: " + userId);
 
-   $.get("/user", {userId: userId}, function(data) {
+   $.get("/user", { userId: userId }, function(data) {
       console.log("Back from the server with : ");
       console.log(data);
 
@@ -23,8 +25,9 @@ function searchSportById() {
 
    var sportId = $("#sportId").val();
    console.log("sportId: " + sportId);
+   //var params = [{sportId: sportId}];
 
-   $.get("/sport", {sportId: sportId}, function(data) {
+   $.get("/sport", {sportId:sportId}, function(data) {
       console.log("Back from the server with : ");
       console.log(data);
 
@@ -34,6 +37,19 @@ function searchSportById() {
          console.log(sports);
       }
    });
+}
+
+function getAllUsersSports() {
+
+   $.get("/sports", function(data) {
+      console.log("Back from the server with : ");
+      // console.log(data);
+      console.log(data);
+      for (var i = 0; i < data.length ; i++) {
+         var sports = data[i];
+         $("#ulUsers").append("<li>" + sports.id + " " + sports.name +"</li>");
+      }
+   }) ;
 
 
 }

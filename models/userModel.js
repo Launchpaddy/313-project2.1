@@ -8,17 +8,33 @@ console.log("connectionString  = " + connectionString);
 
 function getAllUsers(callback) {
    // body...
-   var result = {
-      users: [
-      {id:1, name:"trevik0"},
-      {id:2, name:"trevik1"},
-      {id:3, name:"trevik2"},
-      {id:4, name:"trevik3"},
-      {id:5, name:"trevik4"},
-      {id:6, name:"trevik5"}
-      ]
-   }
-   callback(null, result);
+   // var result = {
+   //    users: [
+   //    {id:1, name:"trevik0"},
+   //    {id:2, name:"trevik1"},
+   //    {id:3, name:"trevik2"},
+   //    {id:4, name:"trevik3"},
+   //    {id:5, name:"trevik4"},
+   //    {id:6, name:"trevik5"}
+   //    ]
+   // }
+   // callback(null, result);
+
+   console.log("searching db with: " + id);
+
+   var sql = 'SELECT * FROM users';
+
+   pool.query(sql, function(err, result) {
+
+      if (err) {
+
+         console.log(err);
+         callback(err, "Erro with DB");
+      }
+     console.log("Found result: " + JSON.stringify(result.rows));
+
+      callback(null, result.rows);
+   });
 }
 
 function getUserById(id, callback) {
