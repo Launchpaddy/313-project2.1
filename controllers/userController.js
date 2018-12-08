@@ -46,5 +46,6 @@ function createUser(req, res) {
 module.exports = {
    getUserById: getUserById,
    createUser: createUser,
-   getAllUsers: getAllUsers
+   getAllUsers: getAllUsers,
+   verifyLogin: verifyLogin
 };
