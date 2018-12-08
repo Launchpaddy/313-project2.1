@@ -83,6 +83,27 @@ function createUser(display_name, username, password, callback) {
    });
 }
 
+function verifyLogin(username, password, callback) {
+   console.log("searching db for username: " + username + " password: " + password);
+
+   var sql = 'SELECT * FROM users WHERE username = $1 AND password = $2';
+
+   var params = [id];
+
+
+   pool.query(sql, params, function(err, result) {
+
+      if (err) {
+
+         console.log(err);
+         callback(err, "Erro with DB");
+      }
+     console.log("Found result: " + JSON.stringify(result.rows));
+
+      callback(null, result.rows);
+   });
+}
+
 module.exports = {
    getAllUsers: getAllUsers,
    getUserById: getUserById,

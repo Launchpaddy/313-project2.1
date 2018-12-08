@@ -19,6 +19,16 @@ function getAllUsers(req, res) {
 
 }
 
+function verifyLogin(req, res) {
+   var username = req.query.username;
+   var password = req.query.password;
+
+   userModel.verifyLogin(username, password,  function(error, result) {
+      res.json(result);
+   })
+
+}
+
 
 
 function createUser(req, res) {

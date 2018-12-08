@@ -15,6 +15,8 @@ app.use(express.urlencoded({ extented: true })); //{extented:true}
 
 app.get("/user", userController.getUserById);
 
+app.get("/verifyLogin" userController.verifyLogin)
+
 app.get("/users", userController.getAllUsers);
 
 app.post("/user", userController.createUser);

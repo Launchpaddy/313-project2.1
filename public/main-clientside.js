@@ -1,5 +1,7 @@
-//const sportController = require("./controllers/sportController");
 
+/**
+*
+*/
 function searchUserById() {
    // body...
    console.log("searchUserById");
@@ -18,7 +20,9 @@ function searchUserById() {
    });
 }
 
-
+/**
+*
+*/
 function searchSportById() {
    // body...
     console.log("searchSportById");
@@ -39,6 +43,9 @@ function searchSportById() {
    });
 }
 
+/**
+*
+*/
 function getAllUsersSports() {
 
    $.get("/sports", function(data) {
@@ -50,6 +57,4 @@ function getAllUsersSports() {
          $("#ulUsers").append("<li>" + sports.id + " " + sports.name +"</li>");
       }
    }) ;
-
-
 }
