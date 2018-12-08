@@ -88,7 +88,7 @@ function verifyLogin(username, password, callback) {
 
    var sql = 'SELECT * FROM users WHERE username = $1 AND password = $2';
 
-   var params = [id];
+   var params = [username, password];
 
 
    pool.query(sql, params, function(err, result) {
@@ -98,7 +98,7 @@ function verifyLogin(username, password, callback) {
          console.log(err);
          callback(err, "Erro with DB");
       }
-     console.log("Found result: " + JSON.stringify(result.rows));
+     console.log("Found result: " + JSON.stringify(result[0].rows));
 
       callback(null, result.rows);
    });
