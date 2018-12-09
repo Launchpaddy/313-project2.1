@@ -8,6 +8,14 @@ const sportController = require("./controllers/sportController");
 const PORT = process.env.PORT || 5000;
 var app = express();
 
+var session = require("express-session");
+
+app.use(session({
+   secret: 'secret secret',
+   resave: false,
+   saveUninitialized: true
+}));
+
 app.use(express.static(path.join(__dirname + "/public")));
 app.use(express.json());
 

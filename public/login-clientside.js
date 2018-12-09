@@ -17,7 +17,17 @@ function verifyLogin() {
    $.get("/verifyLogin",params , function(data) {
       console.log("Back from the server with : ");
       console.log(data);
-      window.location.href = "/home.html";
+
+      if (data[0] != null) {
+
+        // session.username = data[0].username;
+         //console.log(session.username);
+         //window.location.replace("/home.html");
+
+
+      } else {
+         $("#h2").replaceWith("<h2>try again niger</h2>");
+      }
 
    });
 

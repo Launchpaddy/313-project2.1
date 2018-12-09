@@ -94,11 +94,10 @@ function verifyLogin(username, password, callback) {
    pool.query(sql, params, function(err, result) {
 
       if (err) {
-
          console.log(err);
          callback(err, "Erro with DB");
       }
-     console.log("Found result: " + JSON.stringify(result[0].rows));
+     console.log("Found result: " + JSON.stringify(result.rows));
 
       callback(null, result.rows);
    });
