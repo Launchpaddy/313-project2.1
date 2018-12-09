@@ -26,7 +26,7 @@ function verifyLogin() {
 
 
       } else {
-         $("#h2").replaceWith("<h2>try again niger</h2>");
+         $("#h2").replaceWith("<h2>try again</h2>");
       }
 
    });
