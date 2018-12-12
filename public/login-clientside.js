@@ -46,7 +46,8 @@ function verifyLogin() {
 
         // session.username = data[0].username;
          console.log(data.username);
-         window.location.replace("/home.html");
+
+         //window.location.replace("/home.html");
 
 
       } else {
