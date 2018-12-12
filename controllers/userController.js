@@ -30,7 +30,7 @@ function verifyLogin(req, res) {
          req.session.username = result[0].username;
          //req.session.pass
 
-         var sesionStuff = {result: result, session: req.session.username}
+         var sessionStuff = {result: result, session: req.session.username};
          res.json(sessionStuff);
       } else {
          res.json({success: false});
