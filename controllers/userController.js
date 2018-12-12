@@ -1,5 +1,6 @@
-const userModel = require("../models/userModel.js")
-var session = require("express-session");
+const userModel = require("../models/userModel.js");
+//var session = require("express-session");
+
 function getUserById(req, res) {
 
    var userId = req.query.userId;
@@ -26,7 +27,7 @@ function verifyLogin(req, res) {
    userModel.verifyLogin(username, password,  function(error, result) {
       if (result[0] != null) {
          console.log("the result 0 is not null so we should havea  reall person")
-         //res.session.username = "stroign in session";
+         req.session.username = "storing in session";
          res.json(result);
       } else {
          res.json({success: false});
