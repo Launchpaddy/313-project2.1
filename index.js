@@ -27,7 +27,7 @@ app.get("/verifyLogin", userController.verifyLogin);
 
 app.get("/users", userController.getAllUsers);
 
-app.post("/user", userController.createUser);
+app.post("/createUser", userController.createUser);
 
 
 app.get("/sport", sportController.getSportById);
