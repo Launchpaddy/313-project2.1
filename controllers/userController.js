@@ -28,7 +28,8 @@ function verifyLogin(req, res) {
       if (result[0] != null) {
          console.log("the result 0 is not null so we should havea  reall person")
          req.session.username = result[0].username;
-         //req.session.pass
+         req.session.display_name = result[0].display_name;
+         req.session.password = result[0].password;
 
          var sessionStuff = {
             result: result,
