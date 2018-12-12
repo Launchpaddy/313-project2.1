@@ -52,8 +52,12 @@ function verifyLogin() {
       } else {
          $("#h2").replaceWith("<h2>try again</h2>");
          //$("#loginForm").replaceWith("<h2>try again</h2>");
-
-         $("#loginForm").replaceWith('<label for="username"><b>New Username</b></label><input type="text" id="username" placeholder="Enter Username"  required> <br> <label for="display_name"><b>Chose Display Name</b></label><input type="text" id="display_name" placeholder="Enter Display Name"  required> <br>   <label for="password"><b>Password</b></label>    <input type="password" id="password" placeholder="Enter Password" required><br>    <button onclick="createUser()">Create new Account</button>');
+         var string;
+         string += '<label for="username"><b>New Username</b></label><input type="text" id="username" placeholder="Enter Username"  required> <br>';
+         string += '<label for="display_name"><b>Chose Display Name</b></label><input type="text" id="display_name" placeholder="Enter Display Name"  required> <br>';
+         string += '<label for="password"><b>Password</b></label> <input type="password" id="password" placeholder="Enter Password" required><br> '
+         string += '<button onclick="createUser()">Create new Account</button>'
+         $("#loginForm").replaceWith(string);
 
       }
 
