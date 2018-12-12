@@ -1,6 +1,9 @@
 const userModel = require("../models/userModel.js");
-//var session = require("express-session");
 
+
+/*********************************************************
+*
+*********************************************************/
 function getUserById(req, res) {
 
    var userId = req.query.userId;
@@ -12,6 +15,10 @@ function getUserById(req, res) {
 
 }
 
+
+/*********************************************************
+*
+*********************************************************/
 function getAllUsers(req, res) {
 
    userModel.getAllUsers(function(error, result) {
@@ -20,13 +27,19 @@ function getAllUsers(req, res) {
 
 }
 
+
+/*********************************************************
+*
+*********************************************************/
 function verifyLogin(req, res) {
    var username = req.query.username;
    var password = req.query.password;
 
    userModel.verifyLogin(username, password,  function(error, result) {
       if (result[0] != null) {
-         console.log("the result 0 is not null so we should havea  reall person")
+
+         console.log("passed verify login and adding them to the session");
+
          req.session.username = result[0].username;
          req.session.display_name = result[0].display_name;
          req.session.password = result[0].password;
@@ -36,9 +49,10 @@ function verifyLogin(req, res) {
             username: req.session.username,
             display_name: req.session.display_name,
             password: req.session.password
-
          };
+
          res.json(sessionStuff);
+
       } else {
          res.json({success: false});
       }
@@ -46,8 +60,9 @@ function verifyLogin(req, res) {
 
 }
 
-
-
+/*********************************************************
+*
+*********************************************************/
 function createUser(req, res) {
 
    var display_name = req.body.display_name;
@@ -62,6 +77,10 @@ function createUser(req, res) {
 
 }
 
+
+/*********************************************************
+*
+*********************************************************/
 module.exports = {
    getUserById: getUserById,
    createUser: createUser,
