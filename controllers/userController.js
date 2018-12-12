@@ -28,7 +28,7 @@ function verifyLogin(req, res) {
       if (result[0] != null) {
          console.log("the result 0 is not null so we should havea  reall person")
          req.session.username = "storing in session";
-         res.json(result);
+         res.json({result: result, session: req.session.username});
       } else {
          res.json({success: false});
       }
