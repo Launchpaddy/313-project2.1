@@ -166,7 +166,7 @@ function displaySport(sport_id, sport_name) {
 
          string += '</div>';
 
-         var str = "<table>";
+         var str = '<table class="table">';
          data.forEach(activity => {
             str += "<tr>"
             str += "<td>" + activity.name + "</td>";
