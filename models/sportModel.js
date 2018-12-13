@@ -51,9 +51,9 @@ function getSportById(id, callback) {
    });
 }
 
-function addSport(user_id,name, callback) {
+function addSport(user_id, name, callback) {
 
-   console.log("addingSport : " + name);
+   console.log("addingSport : " + name + "to user_id" + user_id);
 
    var sql = "INSERT INTO sports (name, user_id) VALUES ($1, $2 );";
 
