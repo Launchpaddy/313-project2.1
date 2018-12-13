@@ -29,11 +29,11 @@ function getAllUsersSports(user_id, callback) {
 }
 
 
-function getSportById(id, callback) {
+function getActivityBySportId(id, callback) {
 
-   console.log("searching sport id in model : " + id);
+   console.log("searching for activites in model wiht sport id: " + id);
 
-   var sql = 'SELECT * FROM sports WHERE id = $1::int';
+   var sql = 'SELECT * FROM activities WHERE sport_id = $1::int';
 
    var params = [id];
 
@@ -75,6 +75,6 @@ function addSport(user_id, name, callback) {
 
 module.exports = {
    getAllUsersSports: getAllUsersSports,
-   getSportById: getSportById,
+   getActivityBySportId: getActivityBySportId,
    addSport: addSport
 }

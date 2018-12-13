@@ -131,7 +131,7 @@ function displaySport(sport_id, sport_name) {
    console.log("sport id: " + sport_id);
    console.log("sport name:" + sport_name);
    var params = {sport_id: sport_id};
-   $.get("/getSportById", params, function(data) { 
+   $.get("/getActivitiesBySportId", params, function(data) { 
       console.log("back from get sport by id with " + data);
       
          $("#h2").replaceWith("<h2>try again</h2>");
