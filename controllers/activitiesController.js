@@ -21,6 +21,15 @@ function addActivity(req, res)  {
     var performance_level  = req.query.performance;
     var fun_level = req.query.fun;
     var health = req.query.health;
+    console.log("name: " + name);
+   console.log("date: " + date);
+   console.log("place: " + place);
+   console.log("duration: " + hour_duration);
+   console.log("quality: " + inviroment_quality);
+   console.log("sport id: " + sport_id);
+   console.log("performance : " + performance_level);
+   console.log("fun: " + fun_level);
+   console.log("health: " + health);
 
     console.log(name + day + place + hour_duration );
     
