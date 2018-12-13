@@ -51,13 +51,13 @@ function getSportById(id, callback) {
    });
 }
 
-function addSport(user_id, callback) {
+function addSport(user_id,name, callback) {
 
-   console.log("addingSport : " + user_id);
+   console.log("addingSport : " + name);
 
    var sql = "INSERT INTO sports (name, user_id) VALUES ($1, $2 );";
 
-   var params = ["testingSportName", user_id];
+   var params = [name, user_id];
 
 
    pool.query(sql, params, function(err, result) {
