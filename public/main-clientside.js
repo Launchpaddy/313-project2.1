@@ -55,7 +55,7 @@ function getAllUsersSports() {
       $("#usersSports").replaceWith('<div id="usersSports"  class="col-sm-8 text-left"><h1> Sports</h1><br></div>');
 
       for (var i = 0; i < data.length ; i++) {
-         var sports = data[i];
+         var sport = data[i];
          $("#usersSports").append("<button onclick='verifyLogin()'>" + sport.name + "</button>");//"<a>" + sports.name + "</a> <br><br>");
          //"<button onclick='verifyLogin()'>" + sport.name + "</button>"
       }
