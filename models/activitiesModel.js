@@ -28,17 +28,17 @@ function getActivitiesBySportId(sport_id, callback) {
  }
  
 
- function addActivity(params, callback) {
+ function addActivity(name, date, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health, callback) {
 
-    var name = params.name;
-    var day = params.day;
-    var place = params.place;
-    var hour_duration = params.hour_duration;
-    var inviroment_quality = params.inviroment_quality;
-    var sport_id = params.sport_id;
-    var performance_level = params.performance_level;
-    var fun_level = params.fun_level;
-    var health = params.health;
+    // var name = params.name;
+    // var day = params.day;
+    // var place = params.place;
+    // var hour_duration = params.hour_duration;
+    // var inviroment_quality = params.inviroment_quality;
+    // var sport_id = params.sport_id;
+    // var performance_level = params.performance_level;
+    // var fun_level = params.fun_level;
+    // var health = params.health;
  
     console.log("adding activity : " + name + "with day" + day);
  
