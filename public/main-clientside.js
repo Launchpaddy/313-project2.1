@@ -147,7 +147,7 @@ function displaySport(sport_id, sport_name) {
          string += '<p>Health Range 1-100:'
          string += '<input type="range" min="1" max="100" value="50" class="slider"  id="health" name="health">'
          string += '</p>'
-         string += '<input type="hidden" id="sport_id" name="sport_id" value=\"sport_id\" >'
+         string += '<input type="hidden" id="sport_id" name="sport_id" value="' + sport_id + '" >'
          string += '<button onclick=\"addActivity()\">Add new Activity</button>'
          string += '<div>'
         // string += '<form>'
