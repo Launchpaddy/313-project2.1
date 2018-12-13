@@ -118,13 +118,14 @@ var params = {name: name, date:date, place:place, hour_duration:hour_duration, i
 
 $.post("/addActivity", params, function(data) {
    console.log("Back from adding sport with : ");
+   displaySport(sport_id, sport_name);
          console.log(data);
          if (data[0] != null) {
             console.log("added a new activity");
             // $("#loginForm").replaceWith('<label for="username"><b>New Username</b></label><input type="text" id="username" placeholder="Enter Username"  required> <br> <label for="password"><b>Password</b></label>    <input type="password" id="password" placeholder="Enter Password" required><br>    <button onclick="verifyLogin()">Verify Login</button>');
          } 
 })
-displaySport(sport_id, sport_name);
+
 
 
 }
