@@ -6,9 +6,9 @@ const pool = new Pool({connectionString: connectionString});
 console.log("connectionString  = " + connectionString);
 
 
-function getAllUsersSports(userId, callback) {
+function getAllUsersSports(user_id, callback) {
 
-   console.log("searching sport with id in model : " + userId);
+   console.log("searching sport with id in model : " + user_id);
 
    var sql = 'SELECT * FROM sports WHERE user_id = $1::int';
 

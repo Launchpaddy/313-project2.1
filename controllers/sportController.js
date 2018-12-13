@@ -3,9 +3,9 @@ const sportModel = require("../models/sportModel.js")
 
 function getAllUsersSports(req, res) {
 
-   var userId = req.query.userId;
+   var user_id = req.query.user_id;
 
-   sportModel.getAllUsersSports(userId, function(error, result) {
+   sportModel.getAllUsersSports(user_id, function(error, result) {
       res.json(result);
       console.log("now returning all users sports: ");
       console.log(result);
