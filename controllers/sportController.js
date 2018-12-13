@@ -3,7 +3,7 @@ const sportModel = require("../models/sportModel.js")
 
 function getAllUsersSports(req, res) {
 
-   var user_id = req.query.user_id;
+   var user_id = req.session.user_id;
 
    sportModel.getAllUsersSports(user_id, function(error, result) {
       res.json(result);
@@ -15,7 +15,8 @@ function getAllUsersSports(req, res) {
 
 function getSportById(req, res) {
 
-   var sportId = req.session.user
+   // this needs a todo work
+   //var sportId = req.query.sport_id;
    console.log("sportId inside of the controler: " + sportId);
    sportModel.getSportById(sportId, function(error,result) {
       res.json(result);

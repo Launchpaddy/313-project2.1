@@ -12,7 +12,9 @@ function getAllUsersSports(user_id, callback) {
 
    var sql = 'SELECT * FROM sports WHERE user_id = $1::int';
 
-   pool.query(sql, function(err, result) {
+   var params =  [user_id];;
+
+   pool.query(sql, params , function(err, result) {
 
       if (err) {
 
