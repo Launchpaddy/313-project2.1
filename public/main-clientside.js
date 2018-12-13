@@ -101,9 +101,10 @@ function verifyLogin() {
 
 function displaySport(sport_id) {
    console.log("sport id: " + sport_id);
+   var params = [sport_id];
    $.get("/getSportById", params, function(data) { 
       console.log("back from get sport by id with " + data);
-      
+
    })
 
 }
