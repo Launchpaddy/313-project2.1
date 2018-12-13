@@ -27,7 +27,7 @@ function getSportById(req, res) {
 
 function addSport(req, res) {
 
-   console.log("anything in session?" + req.session.name + req.session.password);
+   console.log("anything in session?" + req.session.username + req.session.password);
    var user_id = req.session.user_id;
 
    var name = req.body.name;
