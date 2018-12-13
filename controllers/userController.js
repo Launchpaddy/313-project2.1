@@ -32,8 +32,8 @@ function getAllUsers(req, res) {
 *
 *********************************************************/
 function verifyLogin(req, res) {
-   var username = req.body.username;
-   var password = req.body.password;
+   var username = req.query.username;
+   var password = req.query.password;
    console.log("username: " + username);
   
    userModel.verifyLogin(username, password,  function(error, result) {
