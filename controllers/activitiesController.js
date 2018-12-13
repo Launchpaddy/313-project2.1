@@ -11,16 +11,16 @@ function getActivitiesBySportId(req, res) {
 
 function addActivity(req, res)  {
 
-    console.log("inside activites controller");
-    var name = req.query.name;
-    var day = req.query.day;
-    var place = req.query.place;
-    var hour_duration = req.query.duration;
-    var inviroment_quality = req.query.inviroment_quality;
-    var sport_id = req.query.sport_id;
-    var performance_level  = req.query.performance;
-    var fun_level = req.query.fun;
-    var health = req.query.health;
+    console.log("inside add activites controller");
+    var name = req.body.name;
+    var day = req.body.day;
+    var place = req.body.place;
+    var hour_duration = req.body.duration;
+    var inviroment_quality = req.body.inviroment_quality;
+    var sport_id = req.body.sport_id;
+    var performance_level  = req.body.performance;
+    var fun_level = req.body.fun;
+    var health = req.body.health;
     console.log("name: " + name);
    console.log("date: " + date);
    console.log("place: " + place);
