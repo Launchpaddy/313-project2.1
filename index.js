@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 5000;
 var app = express();
 
 var session = require("express-session");
+var parseurl = require('parseurl');
 
 app.use(session({
    secret: 'secret secret',

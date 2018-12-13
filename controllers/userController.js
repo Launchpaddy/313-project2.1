@@ -1,5 +1,9 @@
-const userModel = require("../models/userModel.js")
-var session = require("express-session");
+const userModel = require("../models/userModel.js");
+
+
+/*********************************************************
+*
+*********************************************************/
 function getUserById(req, res) {
 
    var userId = req.query.userId;
@@ -11,6 +15,10 @@ function getUserById(req, res) {
 
 }
 
+
+/*********************************************************
+*
+*********************************************************/
 function getAllUsers(req, res) {
 
    userModel.getAllUsers(function(error, result) {
@@ -19,6 +27,10 @@ function getAllUsers(req, res) {
 
 }
 
+
+/*********************************************************
+*
+*********************************************************/
 function verifyLogin(req, res) {
    var username = req.query.username;
    var password = req.query.password;
@@ -26,6 +38,7 @@ function verifyLogin(req, res) {
 
    userModel.verifyLogin(username, password,  function(error, result) {
       if (result[0] != null) {
+<<<<<<< HEAD
          console.log("the result 0 is not null so we should havea  reall person")
          //res.session.username = "stroign in session";
 
@@ -33,6 +46,24 @@ function verifyLogin(req, res) {
          req.session.password = result[0].password;
          req.session.user_id = result[0].user_id;
          res.json(result);
+=======
+
+         console.log("passed verify login and adding them to the session");
+
+         req.session.username = result[0].username;
+         req.session.display_name = result[0].display_name;
+         req.session.password = result[0].password;
+
+         var sessionStuff = {
+            result: result,
+            username: req.session.username,
+            display_name: req.session.display_name,
+            password: req.session.password
+         };
+
+         res.json(sessionStuff);
+
+>>>>>>> d61631b9869144d5743ebbbf659bd5713d4faad8
       } else {
          res.json({success: false});
       }
@@ -40,8 +71,9 @@ function verifyLogin(req, res) {
 
 }
 
-
-
+/*********************************************************
+*
+*********************************************************/
 function createUser(req, res) {
 
    var display_name = req.body.display_name;
@@ -57,6 +89,10 @@ function createUser(req, res) {
 
 }
 
+
+/*********************************************************
+*
+*********************************************************/
 module.exports = {
    getUserById: getUserById,
    createUser: createUser,
