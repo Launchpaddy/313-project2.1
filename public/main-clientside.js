@@ -69,3 +69,24 @@ function logOut() {
    //    console.log("loging out");
    // }) ;
 }
+
+function addSport() {
+   console.log("inside of add Sport on client side");
+
+   var name = $("#sportName").val();
+   console.log("sport name: " + name);
+
+
+   var params = {name: name};
+
+
+   $.post("/addSport",params , function(data) {
+         console.log("Back from adding sport with : ");
+         console.log(data);
+         if (data[0] != null) {
+            console.log("added a new sport");
+            // $("#loginForm").replaceWith('<label for="username"><b>New Username</b></label><input type="text" id="username" placeholder="Enter Username"  required> <br> <label for="password"><b>Password</b></label>    <input type="password" id="password" placeholder="Enter Password" required><br>    <button onclick="verifyLogin()">Lerify Login</button>');
+         }
+
+       });
+}

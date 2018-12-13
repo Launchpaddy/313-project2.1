@@ -35,6 +35,8 @@ app.get("/sport", sportController.getSportById);
 
 app.get("/sports", sportController.getAllUsersSports);
 
+app.post("/addSport", sportController.addSport);
+
 app.listen(PORT, function() {
    console.log("server listening on port :" + PORT);
 });

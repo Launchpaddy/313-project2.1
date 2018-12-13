@@ -24,6 +24,14 @@ function getSportById(req, res) {
 
 }
 
+
+function addSport(req, res) {
+   var user_id = req.session.user_id;
+   sportModel.addSport(user_id, function(error, result) {
+      res.json(result);
+   })
+}
+
 module.exports = {
    getAllUsersSports: getAllUsersSports,
    getSportById: getSportById
