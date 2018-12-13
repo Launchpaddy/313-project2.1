@@ -169,7 +169,7 @@ function displaySport(sport_id, sport_name) {
          var str = "<table>";
          data.forEach(activity => {
             str += "<tr>"
-            str += "<td>" + activity.name + "</td>';
+            str += "<td>" + activity.name + "</td>";
             str += "<td>" + activity.day + "</td>";
             str += "<td>" + activity.place + "</td>";
             str += "<td>" + activity.duration + "</td>";
@@ -178,7 +178,7 @@ function displaySport(sport_id, sport_name) {
             str += "<td>" + activity.fun + "</td>";
             str += "<td>" + activity.health + "</td> </tr>";
          });
-         str + " </table>"
+         str += " </table>"
 
 
          $("#center").replaceWith(string + str);
