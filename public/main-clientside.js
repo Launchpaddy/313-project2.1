@@ -166,7 +166,19 @@ function displaySport(sport_id, sport_name) {
 
          string += '</div>';
 
-         var str = '<table class="table">';
+         var str = '<table class="table table-striped">';
+         str += '<thread class="thread-dark">'
+         str += '<tr>'
+         str += '<th scope="col">Name</th>'
+         str += '<th scope="col">Date </th>'
+         str += '<th scope="col">Location</th>'
+         str += '<th scope="col">Hours</th>'
+         str += '<th scope="col">Inviroment</th>'
+         str += '<th scope="col">Performance</th>'
+         str += '<th scope="col">Fun Level</th>'
+         str += '<th scope="col">Health</th>'
+         str += '</tr>'
+         str += '</thread>'
          data.forEach(activity => {
             str += "<tr>"
             str += "<td>" + activity.name + "</td>";
