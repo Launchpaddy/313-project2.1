@@ -109,10 +109,31 @@ function displaySport(sport_id) {
          //$("#loginForm").replaceWith("<h2>try again</h2>");
 
          var string = '<div id="center"  class="col-sm-8 text-left">';
-         string += '<label for="username"><b>New Username</b></label><input type="text" id="username" placeholder="Enter Username"  required> <br>';
-         string += '<label for="display_name"><b>Chose Display Name</b></label><input type="text" id="display_name" placeholder="Enter Display Name"  required> <br>';
-         string += '<label for="password"><b>Password</b></label> <input type="password" id="password" placeholder="Enter Password" required><br> ';
-         string += '<button onclick="createUser()">Create new Account</button>';
+         string += '<form action="add_activity.php" method="POST">'
+         string += '<div class="container">'
+         string += '<label for="activity"><b>Add Activity</b></label>'
+         string += '<input type="text"   placeholder="Enter Activity"     name="activity" required>'
+         string += '<input type="date"   placeholder="Enter Date"         name="date" required>'
+         string += '<input type="text"   Placeholder="Enter Location"     name="place" required>'
+         string += '<p>Duration Hours 1-10:'
+         string += '<input type="range" min="1" max="10" value="1" class="slider" name="duration">'
+         string += '</p>'
+         string += '<p>Inviroment Quality 1-100:'
+         string += '<input type="range" min="1" max="100" value="50" class="slider" name="quality">'
+         string += '</p>'
+         string += '<p>Performance Level 1-100:'
+         string += '<input type="range" min="1" max="100" value="50" class="slider" name="performance">'
+         string += '</p>'
+         string += '<p>Fun Range 1-100:'
+         string += '<input type="range" min="1" max="100" value="50" class="slider" name="fun">'
+         string += '</p>'
+         string += '<p>Health Range 1-100:'
+         string += '<input type="range" min="1" max="100" value="50" class="slider" name="health">'
+         string += '</p>'
+         string += '<input type="hidden" name="sport_id" value="<?php echo $sport_id?>" >'
+         string += '<button type="submit">Add new Activity</button>'
+         string += '<div>'
+         string += '<form>'
          string += '</div>';
          $("#center").replaceWith(string);
  
