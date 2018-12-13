@@ -76,7 +76,7 @@ function addSport() {
    var name = $("#sportName").val();
    console.log("sport name: " + name);
 
-
+// hello 
    var params = {name: name};
 
 
