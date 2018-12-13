@@ -111,7 +111,7 @@ function displaySport(sport_id, sport_name) {
 
          var string = '<div id="center"  class="col-sm-8 text-left">';
          string += "<center><h2>" + sport_name + "</h2></center>";
-         string += '<form action="add_activity.php" method="POST">'
+         string += '<form action="addActivity()" method="POST">'
          string += '<div class="container">'
          string += '<label for="activity"><b>Add Activity</b></label>'
          string += '<input type="text"   placeholder="Enter Activity"     name="activity" required>'
