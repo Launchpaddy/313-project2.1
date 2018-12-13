@@ -16,9 +16,9 @@ function getAllUsersSports(req, res) {
 function getSportById(req, res) {
 
    // this needs a todo work
-   //var sportId = req.query.sport_id;
-   console.log("sportId inside of the controler: " + sportId);
-   sportModel.getSportById(sportId, function(error,result) {
+   var sport_id = req.query.sport_id;
+   console.log("sportId inside of the controler: " + sport_id);
+   sportModel.getSportById(sport_id, function(error,result) {
       res.json(result);
    });
 
