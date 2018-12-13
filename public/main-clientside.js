@@ -56,7 +56,7 @@ function getAllUsersSports() {
 
       for (var i = 0; i < data.length ; i++) {
          var sport = data[i];
-         $("#usersSports").append("<button onclick=\"displaySport(sport.id)\">sport.name</button> <br><br>");
+         $("#usersSports").append("<button onclick=" + displaySport(sport.id) + ">" + sport.name + "</button> <br><br>");
       }
 
    }) ;
