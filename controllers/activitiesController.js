@@ -13,7 +13,7 @@ function addActivity(req, res)  {
 
     console.log("inside add activites controller");
     var name = req.body.name;
-    var day = req.body.day;
+    var date = req.body.date;
     var place = req.body.place;
     var hour_duration = req.body.duration;
     var inviroment_quality = req.body.inviroment_quality;

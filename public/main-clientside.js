@@ -103,7 +103,7 @@ function addActivity() {
    console.log("add activity has been called now we need ot get data from form");
    
    var name = $("#name").val();
-   var day = $("#date").val();
+   var date = $("#date").val();
    var place = $("#place").val();
    var hour_duration = $("#duration").val();
    var inviroment_quality = $("#quality").val();
@@ -111,9 +111,9 @@ function addActivity() {
    var performance_level = $("#performance").val();
    var fun_level = $("#fun").val();
    var health = $("#health").val();
-console.log(name, day, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health);
+console.log(name, date, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health);
 
-var params = {name: name, day:day, place:place, hour_duration:hour_duration, inviroment_quality:inviroment_quality, sport_id:sport_id, performance_level:performance_level, fun_level:fun_level, health:health};
+var params = {name: name, date:date, place:place, hour_duration:hour_duration, inviroment_quality:inviroment_quality, sport_id:sport_id, performance_level:performance_level, fun_level:fun_level, health:health};
 
 $.post("/addActivity", params, function(data) {
    console.log("Back from adding sport with : ");
