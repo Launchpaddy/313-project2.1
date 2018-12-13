@@ -165,6 +165,10 @@ function displaySport(sport_id, sport_name) {
          string += '<div>'
         // string += '<form>'
          string += '</div>';
+
+
+         console.log(data);
+
          $("#center").replaceWith(string);
  
        
