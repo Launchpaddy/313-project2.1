@@ -140,7 +140,6 @@ function displaySport(sport_id, sport_name) {
 
          var string = '<div id="center"  class="col-sm-8 text-left">';
          string += "<center><h2>" + sport_name + "</h2></center>";
-         //string += '<form onsubmit="return addActivity()" method="POST">'
          string += '<div class="container">'
          string += '<label for="activity"><b>Add Activity</b></label>'
          string += '<input type="text"   placeholder="Enter Activity" id="name" name="name" required>'
@@ -164,11 +163,24 @@ function displaySport(sport_id, sport_name) {
          string += '<input type="hidden" id="sport_id" name="sport_id" value="' + sport_id + '" >'
          string += '<button onclick=\"addActivity()\">Add new Activity</button>'
          string += '<div>'
-        // string += '<form>'
+
          string += '</div>';
 
+         var str = "";
+         data.forEach(activity => {
+            str += "<tr>"
+            str += '<td>' + activity.name + '</td>';
+            str += '<td>' + activity.day + '</td>';
+            str += '<td>' + activity.place + '</td>'
+            str += '<td>' + activity.duration + '</td>'
+            str += '<td>' + activity.quality + '</td>'
+            str += '<td>' + activity.performance + '</td>'
+            str += '<td>' + activity.fun + '</td>'
+            str += '<td>' + activity.health + '</td> </tr>'
+         });
 
-         $("#center").replaceWith(string);
+
+         $("#center").replaceWith(string + str);
  
        
 
