@@ -41,7 +41,7 @@ function verifyLogin() {
       console.log("Back from the server with : ");
       console.log(data);
 
-      if (data[0].username != null) {
+      if (data.username != null) {
 
         // session.username = data[0].username;
          console.log(data.username);
