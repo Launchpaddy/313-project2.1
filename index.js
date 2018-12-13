@@ -32,7 +32,7 @@ app.get("/users", userController.getAllUsers);
 app.post("/createUser", userController.createUser);
 
 
-app.get("/getActivityBySportId", sportController.getActivityBySportId);
+app.get("/getActivitiesBySportId", sportController.getActivitiesBySportId);
 
 app.get("/sports", sportController.getAllUsersSports);
 
