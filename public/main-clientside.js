@@ -57,7 +57,7 @@ function getAllUsersSports() {
       for (var i = 0; i < data.length ; i++) {
          var sport = data[i];
          $("#usersSports").append("<a onclick='displaySport("+ sport.id +")'>" + sport.name + "</a><br><br>");//"<a>" + sports.name + "</a> <br><br>");
-         //"<button onclick='verifyLogin()'>" + sport.name + "</button>"
+        
       }
 
    }) ;
@@ -101,9 +101,22 @@ function verifyLogin() {
 
 function displaySport(sport_id) {
    console.log("sport id: " + sport_id);
-   var params = {sport_id:sport_id};
+   var params = {sport_id: sport_id};
    $.get("/getSportById", params, function(data) { 
       console.log("back from get sport by id with " + data);
+      
+         $("#h2").replaceWith("<h2>try again</h2>");
+         //$("#loginForm").replaceWith("<h2>try again</h2>");
+
+         var string = '<div id="center"  class="col-sm-8 text-left">';
+         string += '<label for="username"><b>New Username</b></label><input type="text" id="username" placeholder="Enter Username"  required> <br>';
+         string += '<label for="display_name"><b>Chose Display Name</b></label><input type="text" id="display_name" placeholder="Enter Display Name"  required> <br>';
+         string += '<label for="password"><b>Password</b></label> <input type="password" id="password" placeholder="Enter Password" required><br> ';
+         string += '<button onclick="createUser()">Create new Account</button>';
+         string += '</div>';
+         $("#center").replaceWith(string);
+ 
+       
 
    })
 
