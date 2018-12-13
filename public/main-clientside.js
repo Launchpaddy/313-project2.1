@@ -111,10 +111,10 @@ function displaySport(sport_id, sport_name) {
 
          var string = '<div id="center"  class="col-sm-8 text-left">';
          string += "<center><h2>" + sport_name + "</h2></center>";
-         string += '<form onsubmit="return addActivity()" method="POST">'
+         //string += '<form onsubmit="return addActivity()" method="POST">'
          string += '<div class="container">'
          string += '<label for="activity"><b>Add Activity</b></label>'
-         string += '<input type="text"   placeholder="Enter Activity"     name="activity" required>'
+         string += '<input type="text"   placeholder="Enter Activity"     name="name" required>'
          string += '<input type="date"   placeholder="Enter Date"         name="date" required>'
          string += '<input type="text"   Placeholder="Enter Location"     name="place" required>'
          string += '<p>Duration Hours 1-10:'
@@ -133,9 +133,9 @@ function displaySport(sport_id, sport_name) {
          string += '<input type="range" min="1" max="100" value="50" class="slider" name="health">'
          string += '</p>'
          string += '<input type="hidden" name="sport_id" value="<?php echo $sport_id?>" >'
-         string += '<button type="submit">Add new Activity</button>'
+         string += '<button onclick="addActivity()">Add new Activity</button>'
          string += '<div>'
-         string += '<form>'
+        // string += '<form>'
          string += '</div>';
          $("#center").replaceWith(string);
  
