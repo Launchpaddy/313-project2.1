@@ -12,15 +12,15 @@ function getActivitiesBySportId(req, res) {
 function addActivity(req, res)  {
 
     console.log("inside add activites controller");
-    var name = req.body.name;
-    var date = req.body.date;
-    var place = req.body.place;
-    var hour_duration = req.body.duration;
+    var name            = req.body.name;
+    var date            = req.body.date;
+    var place           = req.body.place;
+    var hour_duration   = req.body.hour_duration;
     var inviroment_quality = req.body.inviroment_quality;
-    var sport_id = req.body.sport_id;
-    var performance_level  = req.body.performance;
-    var fun_level = req.body.fun;
-    var health = req.body.health;
+    var sport_id           = req.body.sport_id;
+    var performance_level  = req.body.performance_level;
+    var fun_level          = req.body.fun_level;
+    var health             = req.body.health;
     console.log("name: " + name);
    console.log("date: " + date);
    console.log("place: " + place);
@@ -31,9 +31,9 @@ function addActivity(req, res)  {
    console.log("fun: " + fun_level);
    console.log("health: " + health);
 
-    console.log(name + day + place + hour_duration );
+    console.log(name + date + place + hour_duration );
     
-    var params = [name, day, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health];
+    var params = [name, date, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health];
     activitiesModel.addActivity(params, function (errro, result) {
         res.json(result);
     })
