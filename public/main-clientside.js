@@ -133,7 +133,7 @@ function displaySport(sport_id, sport_name) {
          string += '<input type="range" min="1" max="100" value="50" class="slider" name="health">'
          string += '</p>'
          string += '<input type="hidden" name="sport_id" value="<?php echo $sport_id?>" >'
-         string += '<button onclick="addActivity()">Add new Activity</button>'
+         string += '<button onclick=\"addActivity()\">Add new Activity</button>'
          string += '<div>'
         // string += '<form>'
          string += '</div>';
