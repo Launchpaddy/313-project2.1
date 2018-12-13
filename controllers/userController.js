@@ -41,11 +41,12 @@ function verifyLogin(req, res) {
 
          
          console.log("passed verify login and adding them to the session");
-
+         
          req.session.username = result[0].username;
          req.session.display_name = result[0].display_name;
          req.session.password = result[0].password;
          req.session.user_id = result[0].user_id;
+         console.log("results from verify login: " + result[0])
 
          var sessionStuff = {
             result: result,
@@ -54,7 +55,7 @@ function verifyLogin(req, res) {
             password: req.session.password,
             user_id: req.session.user_id
          };
-
+         console.log("session Stuff: " + sessionStuff);
          res.json(sessionStuff);
 
       } else {
