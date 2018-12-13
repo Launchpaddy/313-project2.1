@@ -75,5 +75,6 @@ function addSport(user_id, callback) {
 
 module.exports = {
    getAllUsersSports: getAllUsersSports,
-   getSportById: getSportById
+   getSportById: getSportById,
+   addSport: addSport
 }

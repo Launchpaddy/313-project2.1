@@ -34,6 +34,7 @@ function addSport(req, res) {
 
 module.exports = {
    getAllUsersSports: getAllUsersSports,
-   getSportById: getSportById
+   getSportById: getSportById,
+   addSport: addSport
 
 };
