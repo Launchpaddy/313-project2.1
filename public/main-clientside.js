@@ -103,12 +103,12 @@ function addActivity() {
    console.log("add activity has been called now we need ot get data from form");
    var name = $("#name").val();
     var day = $("#date").val();
-    var place = $("place").val();
-    var hour_duration = $("duration").val();
+    var place = $("#place").val();
+    var hour_duration = $("#duration").val();
     var inviroment_quality = $("#quality").val();
     var sport_id = $("#sport_id").val();
     var performance_level = $("#peformance").val();
-    var fun_level = $("fun").val();
+    var fun_level = $("#fun").val();
     var health = $("#health").val();
 console.log(name, day, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health);
 
@@ -147,7 +147,7 @@ function displaySport(sport_id, sport_name) {
          string += '<p>Health Range 1-100:'
          string += '<input type="range" min="1" max="100" value="50" class="slider"  id="health" name="health">'
          string += '</p>'
-         string += '<input type="hidden" id="" name="sport_id" value="<?php echo $sport_id?>" >'
+         string += '<input type="hidden" id="sport_id" name="sport_id" value="<?php echo $sport_id?>" >'
          string += '<button onclick=\"addActivity()\">Add new Activity</button>'
          string += '<div>'
         // string += '<form>'
