@@ -11,6 +11,7 @@ function getActivitiesBySportId(req, res) {
 
 function addActivity(req, res)  {
 
+    console.log("inside activites controller");
     var name = req.query.name;
     var day = req.query.day;
     var place = req.query.place;
@@ -20,6 +21,8 @@ function addActivity(req, res)  {
     var performance_level  = req.query.performance;
     var fun_level = req.query.fun;
     var health = req.query.health;
+
+    console.log(name + day + place + hour_duration );
     
     var params = [name, day, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health];
     activitiesModel.addActivity(params, function (errro, result) {

@@ -99,6 +99,11 @@ function verifyLogin() {
    });
 }
 
+function addActivity() {
+   console.log("add activity has been called now we need ot get data from form");
+   
+}
+
 function displaySport(sport_id, sport_name) {
    console.log("sport id: " + sport_id);
    console.log("sport name:" + sport_name);
