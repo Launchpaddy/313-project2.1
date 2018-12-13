@@ -56,7 +56,7 @@ function getAllUsersSports() {
 
       for (var i = 0; i < data.length ; i++) {
          var sport = data[i];
-         $("#usersSports").append("<a onclick='displaySport("+ sport.id +","+sport.name +")'>" + sport.name + "</a><br><br>");//"<a>" + sports.name + "</a> <br><br>");
+         $("#usersSports").append("<a onclick='displaySport("+ sport.id + ", " + sport.name + ")'>" + sport.name + "</a><br><br>");//"<a>" + sports.name + "</a> <br><br>");
         
       }
 
@@ -101,6 +101,7 @@ function verifyLogin() {
 
 function displaySport(sport_id, sport_name) {
    console.log("sport id: " + sport_id);
+   console.log("sport name:" + sport_name);
    var params = {sport_id: sport_id};
    $.get("/getSportById", params, function(data) { 
       console.log("back from get sport by id with " + data);
