@@ -8,7 +8,7 @@ console.log("connectionString  = " + connectionString);
 
 function getAllUsersSports(userId, callback) {
 
-   console.log("searching sport with id in model : " + id);
+   console.log("searching sport with id in model : " + userId);
 
    var sql = 'SELECT * FROM sports WHERE user_id = $1::int';
 
