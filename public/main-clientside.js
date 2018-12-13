@@ -56,7 +56,7 @@ function getAllUsersSports() {
 
       for (var i = 0; i < data.length ; i++) {
          var sport = data[i];
-         $("#usersSports").append("<a onclick='displaySport("+ sport.id +")'>" + sport.name + "</a><br><br>");//"<a>" + sports.name + "</a> <br><br>");
+         $("#usersSports").append("<a onclick='displaySport("+ sport.id +","+sport.name +")'>" + sport.name + "</a><br><br>");//"<a>" + sports.name + "</a> <br><br>");
         
       }
 
@@ -99,7 +99,7 @@ function verifyLogin() {
    });
 }
 
-function displaySport(sport_id) {
+function displaySport(sport_id, sport_name) {
    console.log("sport id: " + sport_id);
    var params = {sport_id: sport_id};
    $.get("/getSportById", params, function(data) { 
@@ -109,6 +109,7 @@ function displaySport(sport_id) {
          //$("#loginForm").replaceWith("<h2>try again</h2>");
 
          var string = '<div id="center"  class="col-sm-8 text-left">';
+         string += "<h2>" + sport_name + "</h2>";
          string += '<form action="add_activity.php" method="POST">'
          string += '<div class="container">'
          string += '<label for="activity"><b>Add Activity</b></label>'
