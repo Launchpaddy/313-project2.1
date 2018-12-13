@@ -108,6 +108,7 @@ function addActivity() {
    var hour_duration = $("#duration").val();
    var inviroment_quality = $("#quality").val();
    var sport_id = $("#sport_id").val();
+   var sport_name = $("sport_name").val();
    var performance_level = $("#performance").val();
    var fun_level = $("#fun").val();
    var health = $("#health").val();
@@ -123,7 +124,7 @@ $.post("/addActivity", params, function(data) {
             // $("#loginForm").replaceWith('<label for="username"><b>New Username</b></label><input type="text" id="username" placeholder="Enter Username"  required> <br> <label for="password"><b>Password</b></label>    <input type="password" id="password" placeholder="Enter Password" required><br>    <button onclick="verifyLogin()">Verify Login</button>');
          } 
 })
-displaySport();
+displaySport(sport_id, sport_name);
 
 
 }
@@ -162,6 +163,7 @@ function displaySport(sport_id, sport_name) {
          string += '<input type="range" min="1" max="100" value="50" class="slider"  id="health" name="health">'
          string += '</p>'
          string += '<input type="hidden" id="sport_id" name="sport_id" value="' + sport_id + '" >'
+         string += '<input type="hidden" id="sport_name" name="sport_name" value="' + sport_name + '" >'
          string += '<button onclick=\"addActivity()\">Add new Activity</button>'
          string += '<div>'
 
