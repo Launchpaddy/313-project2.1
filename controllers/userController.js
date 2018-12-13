@@ -45,7 +45,7 @@ function verifyLogin(req, res) {
          req.session.username = result[0].username;
          req.session.display_name = result[0].display_name;
          req.session.password = result[0].password;
-         req.session.user_id = result[0].user_id;
+         req.session.user_id = result[0].id;
          console.log("results from verify login: " + result[0])
 
          var sessionStuff = {
