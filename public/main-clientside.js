@@ -89,6 +89,7 @@ function addSport() {
          }
 
        });
+       getAllUsersSports();
 }
 
 function verifyLogin() {
