@@ -34,7 +34,7 @@ function addActivity(req, res)  {
     console.log(name + date + place + hour_duration );
     
     var params = [name, date, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health];
-    activitiesModel.addActivity(params, function (errro, result) {
+    activitiesModel.addActivity(name, date, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health, function (errro, result) {
         res.json(result);
     })
 

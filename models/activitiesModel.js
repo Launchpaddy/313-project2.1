@@ -42,7 +42,7 @@ function getActivitiesBySportId(sport_id, callback) {
  
     console.log("adding activity : " + name + "with day" + day);
  
-    var sql = "INSERT INTO activities (name, day, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health) VALUES ($1, $2, $3, $4, $5, $6, $7, $8);";
+    var sql = "INSERT INTO activities (name, day, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);";
  
     var params = [name, day, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health];
  
