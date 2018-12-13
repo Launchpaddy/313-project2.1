@@ -112,7 +112,7 @@ function addActivity() {
     var health = $("#health").val();
 console.log(name, day, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health);
 
-var params = [name, day, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health];
+var params = {name: name, day:day, place:place, hour_duration:hour_duration, inviroment_quality:inviroment_quality, sport_id:sport_id, performance_level:performance_level, fun_level:fun_level, health:health};
 
 $.post("/addActivity", params, function(data) {
    console.log("Back from adding sport with : ");
@@ -120,7 +120,7 @@ $.post("/addActivity", params, function(data) {
          if (data[0] != null) {
             console.log("added a new activity");
             // $("#loginForm").replaceWith('<label for="username"><b>New Username</b></label><input type="text" id="username" placeholder="Enter Username"  required> <br> <label for="password"><b>Password</b></label>    <input type="password" id="password" placeholder="Enter Password" required><br>    <button onclick="verifyLogin()">Verify Login</button>');
-         }
+         } 
 })
 
 

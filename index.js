@@ -38,6 +38,7 @@ app.get("/sports", sportController.getAllUsersSports);
 
 app.post("/addSport", sportController.addSport);
 
+
 app.post("/addActivity", activitesController.addActivity)
 
 app.listen(PORT, function() {
