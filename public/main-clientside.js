@@ -52,9 +52,20 @@ function getAllUsersSports() {
       console.log("Back from the server with : ");
       // console.log(data);
       console.log(data);
+      $("#usersSports").replaceWith('<div id="usersSports"  class="col-sm-8 text-left"><h1> Sports</h1><br></div>');
+
       for (var i = 0; i < data.length ; i++) {
          var sports = data[i];
-         $("#ulUsers").append("<li>" + sports.id + " " + sports.name +"</li>");
+         $("#usersSports").append("<a>" + sports.name + "</a> <br><br>");
       }
+
    }) ;
+}
+
+function logOut() {
+   
+   window.location.replace("/login.html");
+   // $.post("/logOut", function(data) {
+   //    console.log("loging out");
+   // }) ;
 }

@@ -3,7 +3,9 @@ const sportModel = require("../models/sportModel.js")
 
 function getAllUsersSports(req, res) {
 
-   sportModel.getAllUsersSports(function(error, result) {
+   var userId = req.query.userId;
+
+   sportModel.getAllUsersSports(userId, function(error, result) {
       res.json(result);
       console.log("now returning all users sports: ");
       console.log(result);
@@ -13,7 +15,7 @@ function getAllUsersSports(req, res) {
 
 function getSportById(req, res) {
 
-   var sportId = req.query.sportId;
+   var sportId = req.session.user
    console.log("sportId inside of the controler: " + sportId);
    sportModel.getSportById(sportId, function(error,result) {
       res.json(result);

@@ -1,6 +1,5 @@
 
 
-
 function createUser() {
    console.log("inside of create User on client side");
 

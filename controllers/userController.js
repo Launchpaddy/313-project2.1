@@ -22,11 +22,16 @@ function getAllUsers(req, res) {
 function verifyLogin(req, res) {
    var username = req.query.username;
    var password = req.query.password;
+   var user_id = req.body.user_id;
 
    userModel.verifyLogin(username, password,  function(error, result) {
       if (result[0] != null) {
          console.log("the result 0 is not null so we should havea  reall person")
          //res.session.username = "stroign in session";
+
+         req.session.username = result[0].username;
+         req.session.password = result[0].password;
+         req.session.user_id = result[0].user_id;
          res.json(result);
       } else {
          res.json({success: false});
@@ -42,6 +47,7 @@ function createUser(req, res) {
    var display_name = req.body.display_name;
    var username = req.body.username;
    var password = req.body.password;
+   
 
    console.log("in user Conrtroler with: " + display_name + ". username: " + username + ". password: " + password);
 

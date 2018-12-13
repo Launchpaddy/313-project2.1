@@ -2,10 +2,45 @@
 <html>
 <head>
    <title>Home</title>
-   <link rel="stylesheet" type="text/css" href="style.css">
+   <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+   <style>
+      /* Remove the navbar's default margin-bottom and rounded borders */ 
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+      }
+      
+      /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+      .row.content {height: 85vh}
+      
+      /* Set gray background color and 100% height */
+      .sidenav {
+        padding-top: 20px;
+        background-color: #f1f1f1;
+        height: 100%;
+      }
+      
+      /* Set black background color, white text and some padding */
+      footer {
+        background-color: #555;
+        color: white;
+        padding: 15px;
+      }
+      
+      /* On small screens, set height to 'auto' for sidenav and grid */
+      @media screen and (max-width: 767px) {
+        .sidenav {
+          height: auto;
+          padding: 15px;
+        }
+        .row.content {height:auto;} 
+      }
+    </style>
    <script src="main-clientside.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-</head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- </head>
 <body>
    <h1>acheive</h1>
    <div class="topnav">
@@ -29,5 +64,62 @@
       <ul id="ulUsers"></ul>
       <li></li>
    </div>
+</body>
+</html> -->
+</head>
+<body onload="getAllUsersSports()">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Acheive</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Home</a></li>
+        <li><a onclick="getAllUsersSports()">Sports</a></li>
+        <!-- <li><button ">Get all users sports</button><br></li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a onclick="logOut()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a id="usersSports"></a></p>
+
+    </div>
+    <div id="center"  class="col-sm-8 text-left"> 
+      <h1>Welcome</h1>
+      <p>Acheive is a way for you to keep track of your personal performances in your sports</p>
+      <p>As you add you data you will have a clearer picture of how you can personaly improve</p>
+      <hr>
+      <h3>Ready to Go?</h3>
+      <p>Go a head and click on sports to get started</p>
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Trevik Peterson</p>
+</footer>
+
 </body>
 </html>

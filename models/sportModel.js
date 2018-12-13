@@ -6,11 +6,11 @@ const pool = new Pool({connectionString: connectionString});
 console.log("connectionString  = " + connectionString);
 
 
-function getAllUsersSports(callback) {
+function getAllUsersSports(userId, callback) {
 
-  console.log("searching db for all sports");
+   console.log("searching sport with id in model : " + id);
 
-   var sql = 'SELECT * FROM sports';
+   var sql = 'SELECT * FROM sports WHERE user_id = $1::int';
 
    pool.query(sql, function(err, result) {
 
