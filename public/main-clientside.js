@@ -56,7 +56,7 @@ function getAllUsersSports() {
 
       for (var i = 0; i < data.length ; i++) {
          var sport = data[i];
-         $("#usersSports").append("<a onclick='verifyLogin()'>" + sport.name + "</a><br><br>");//"<a>" + sports.name + "</a> <br><br>");
+         $("#usersSports").append("<a onclick='verifyLogin("+ sport.id +")'>" + sport.name + "</a><br><br>");//"<a>" + sports.name + "</a> <br><br>");
          //"<button onclick='verifyLogin()'>" + sport.name + "</button>"
       }
 
