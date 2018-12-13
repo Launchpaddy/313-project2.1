@@ -101,7 +101,17 @@ function verifyLogin() {
 
 function addActivity() {
    console.log("add activity has been called now we need ot get data from form");
-   
+   var name = $("#name").val();
+    var day = $("#date").val();
+    var place = $("place").val();
+    var hour_duration = $("duration").val();
+    var inviroment_quality = $("#quality").val();
+    var sport_id = $("#sport_id").val();
+    var performance_level = $("#peformance").val();
+    var fun_level = $("fun").val();
+    var health = $("#health").val();
+console.log(name, day, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health);
+
 }
 
 function displaySport(sport_id, sport_name) {
@@ -119,25 +129,25 @@ function displaySport(sport_id, sport_name) {
          //string += '<form onsubmit="return addActivity()" method="POST">'
          string += '<div class="container">'
          string += '<label for="activity"><b>Add Activity</b></label>'
-         string += '<input type="text"   placeholder="Enter Activity"     name="name" required>'
-         string += '<input type="date"   placeholder="Enter Date"         name="date" required>'
-         string += '<input type="text"   Placeholder="Enter Location"     name="place" required>'
+         string += '<input type="text"   placeholder="Enter Activity" id="name" name="name" required>'
+         string += '<input type="date"   placeholder="Enter Date"      id="date"   name="date" required>'
+         string += '<input type="text"   Placeholder="Enter Location"  id="place"   name="place" required>'
          string += '<p>Duration Hours 1-10:'
-         string += '<input type="range" min="1" max="10" value="1" class="slider" name="duration">'
+         string += '<input type="range" min="1" max="10" value="1" class="slider" id="duration" name="duration">'
          string += '</p>'
          string += '<p>Inviroment Quality 1-100:'
-         string += '<input type="range" min="1" max="100" value="50" class="slider" name="quality">'
+         string += '<input type="range" min="1" max="100" value="50" class="slider" id="quality" name="quality">'
          string += '</p>'
          string += '<p>Performance Level 1-100:'
-         string += '<input type="range" min="1" max="100" value="50" class="slider" name="performance">'
+         string += '<input type="range" min="1" max="100" value="50" class="slider" id="performance" name="performance">'
          string += '</p>'
          string += '<p>Fun Range 1-100:'
-         string += '<input type="range" min="1" max="100" value="50" class="slider" name="fun">'
+         string += '<input type="range" min="1" max="100" value="50" class="slider" id="fun" name="fun">'
          string += '</p>'
          string += '<p>Health Range 1-100:'
-         string += '<input type="range" min="1" max="100" value="50" class="slider" name="health">'
+         string += '<input type="range" min="1" max="100" value="50" class="slider"  id="health" name="health">'
          string += '</p>'
-         string += '<input type="hidden" name="sport_id" value="<?php echo $sport_id?>" >'
+         string += '<input type="hidden" id="" name="sport_id" value="<?php echo $sport_id?>" >'
          string += '<button onclick=\"addActivity()\">Add new Activity</button>'
          string += '<div>'
         // string += '<form>'
