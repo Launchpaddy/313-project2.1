@@ -37,7 +37,7 @@ function verifyLogin() {
    var params = {username:username, password:password};
 
 
-   $.get("/verifyLogin", function(data) {
+   $.get("/verifyLogin",params , function(data) {
       console.log("Back from the server with : ");
       console.log(data);
 
