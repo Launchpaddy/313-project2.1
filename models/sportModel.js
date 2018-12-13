@@ -57,7 +57,7 @@ function addSport(user_id, callback) {
 
    var sql = "INSERT INTO sports (name, user_id) VALUES ($1, $2 );";
 
-   var params = {name: "testingSportName", user_id: user_id};
+   var params = ["testingSportName", user_id];
 
 
    pool.query(sql, params, function(err, result) {
