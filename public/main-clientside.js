@@ -138,7 +138,7 @@ function displaySport(sport_id, sport_name) {
          $("#h2").replaceWith("<h2>try again</h2>");
          //$("#loginForm").replaceWith("<h2>try again</h2>");
 
-         var string = '<div id="center"  class="col-sm-8 text-left">';
+         var string = '<div id="center"  class="col-sm-4 text-left">';
          string += "<center><h2>" + sport_name + "</h2></center>";
          string += '<div class="container">'
          string += '<label for="activity"><b>Add Activity</b></label>'
