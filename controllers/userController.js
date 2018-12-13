@@ -32,35 +32,39 @@ function getAllUsers(req, res) {
 *
 *********************************************************/
 function verifyLogin(req, res) {
-   var username = req.query.username;
-   var password = req.query.password;
-   var user_id = req.body.user_id;
+   var username = req.session.username;
+   var password = req.session.password;
+   if(!req.session.username) {
+      res.json({success: false});
+   } else {
 
-   userModel.verifyLogin(username, password,  function(error, result) {
-      if (result[0] != null) {
+      userModel.verifyLogin(username, password,  function(error, result) {
+         if (result[0] != null) {
+   
+          
+            console.log("passed verify login and adding them to the session");
+   
+            req.session.username = result[0].username;
+            req.session.display_name = result[0].display_name;
+            req.session.password = result[0].password;
+            req.session.user_id = result[0].user_id;
+   
+            var sessionStuff = {
+               result: result,
+               username: req.session.username,
+               display_name: req.session.display_name,
+               password: req.session.password,
+               user_id: req.session.user_id
+            };
+   
+            res.json(sessionStuff);
+   
+         } else {
+            res.json({success: false});
+         }
+      })
+   }
 
-       
-         console.log("passed verify login and adding them to the session");
-
-         req.session.username = result[0].username;
-         req.session.display_name = result[0].display_name;
-         req.session.password = result[0].password;
-         req.session.user_id = result[0].id;
-
-         var sessionStuff = {
-            result: result,
-            username: req.session.username,
-            display_name: req.session.display_name,
-            password: req.session.password,
-            user_id: req.session.user_id
-         };
-
-         res.json(sessionStuff);
-
-      } else {
-         res.json({success: false});
-      }
-   })
 
 }
 

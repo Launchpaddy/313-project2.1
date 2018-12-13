@@ -90,3 +90,10 @@ function addSport() {
 
        });
 }
+
+function verifyLogin() {
+   $.get("/verifyLogin", function(req, res) {
+
+   });
+}
+
