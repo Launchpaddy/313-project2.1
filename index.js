@@ -4,6 +4,7 @@ const path = require("path");
 
 const userController  = require("./controllers/userController");
 const sportController = require("./controllers/sportController");
+const activitesController = require("./controllers/activitiesController");
 
 const PORT = process.env.PORT || 5000;
 var app = express();
@@ -36,6 +37,8 @@ app.get("/getSportById", sportController.getSportById);
 app.get("/sports", sportController.getAllUsersSports);
 
 app.post("/addSport", sportController.addSport);
+
+app.post("/addActivity", activitesController.addActivity)
 
 app.listen(PORT, function() {
    console.log("server listening on port :" + PORT);
