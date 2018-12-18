@@ -105,6 +105,8 @@ function addSport() {
 function verifyLogin() {
    $.get("/verifyLogin", function(req, res) {
 
+      console.log("inside of verify login with req:");
+      console.log(req);
       if(req == {success: false}) {
          window.location.replace("/login.html");
       }
