@@ -49,7 +49,7 @@ function logout( req, res) {
 
 	
 	if (req.session.logedIn) {
-		request.session.destroy();
+		req.session.destroy();
 		result = {success: true};
 	}
 
