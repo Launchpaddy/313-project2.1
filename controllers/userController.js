@@ -38,8 +38,9 @@ function checkLogin(req, res, next) {
    }
    else {  
       console.log("in Check Login and we arn't loged in");
-      
-      res.status(401).json({success: false});
+      var result = {success: false};
+      console.log(result.success);
+      res.json(result);
       
    }
    
