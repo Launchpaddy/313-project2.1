@@ -33,7 +33,8 @@ function getAllUsers(req, res) {
 *********************************************************/
 function verifyLogin(req, res, next) {
    if(!req.session.logedIn) {
-      res.json({success: true});
+      
+      res.json({success: false});
    }
    else {
       
@@ -42,7 +43,13 @@ function verifyLogin(req, res, next) {
    
 }
 
-function login(req, res) {
+function logout( res, res) {
+   req.session.logedIn = false;
+   res.json({logedIn: false});
+
+}
+
+ function login(req, res) {
    var username = req.query.username;
    var password = req.query.password;
    console.log("username: " + username);
@@ -102,5 +109,6 @@ module.exports = {
    createUser: createUser,
    getAllUsers: getAllUsers,
    verifyLogin: verifyLogin,
-   login: login
+   login: login,
+   logout: logout
 };

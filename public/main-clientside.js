@@ -65,7 +65,16 @@ function getAllUsersSports() {
 
 function logOut() {
    
-   window.location.replace("/login.html");
+   
+   $.get("/logout", function(req, res) {
+
+      if(req == {logedIn: false}) {
+         window.location.replace("/login.html");
+      } else {
+         console.log("still loged in");
+      }
+
+   });
    // $.post("/logOut", function(data) {
    //    console.log("loging out");
    // }) ;
@@ -95,6 +104,10 @@ function addSport() {
 
 function verifyLogin() {
    $.get("/verifyLogin", function(req, res) {
+
+      if(req == {success: false}) {
+         window.location.replace("/login.html");
+      }
 
    });
 }
