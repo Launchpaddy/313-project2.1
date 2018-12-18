@@ -130,7 +130,6 @@ function createUser(req, res) {
 module.exports = {
    getUserById: getUserById,
    createUser: createUser,
-   getAllUsers: getAllUsers,
    checkLogin: checkLogin,
    login: login,
    logout: logout

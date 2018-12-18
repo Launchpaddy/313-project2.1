@@ -82,7 +82,6 @@ function verifyLogin(username, password, callback) {
 }
 
 module.exports = {
-   getAllUsers: getAllUsers,
    getUserById: getUserById,
    createUser: createUser,
    verifyLogin: verifyLogin
