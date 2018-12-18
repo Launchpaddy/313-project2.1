@@ -18,7 +18,8 @@ app.use(session({
    saveUninitialized: true
 }));
 
-
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 app.use(express.static(path.join(__dirname + "/public")));
 app.use(express.json());

@@ -88,6 +88,10 @@ function verifyLogin(username, password, callback) {
 
    var sql = 'SELECT * FROM users WHERE username = $1 AND password = $2';
 
+   bcrypt.compare(myPlaintextPassword, hash, function(err, res) {
+      // res == true
+  });
+
    var params = [username, password];
 
 
