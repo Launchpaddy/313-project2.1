@@ -102,6 +102,7 @@ function logout( req, res) {
             }
             // res == true
          });
+         res2.json({success: false});
       }
       
       
