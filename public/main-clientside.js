@@ -72,6 +72,7 @@ function logOut() {
          window.location.replace("/login.html");
       } else {
          console.log("still loged in");
+         window.location.replace("/login.html");
       }
 
    });

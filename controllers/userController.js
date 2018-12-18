@@ -32,6 +32,7 @@ function getAllUsers(req, res) {
 *
 *********************************************************/
 function checkLogin(req, res, next) {
+   
    if(!req.session.logedIn) {
       console.log("in Verify Login and we arn't loged in");
       
