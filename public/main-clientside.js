@@ -104,6 +104,7 @@ function addSport() {
 }
 
 function checkLogin() {
+   console.log("inside of check login");
    $.get("/checkLogin", function(req, res) {
 
       console.log("inside of check login with req:");
