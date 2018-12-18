@@ -31,7 +31,7 @@ function getAllUsers(req, res) {
 /*********************************************************
 *
 *********************************************************/
-function verifyLogin(req, res, next) {
+function checkLogin(req, res, next) {
    if(!req.session.logedIn) {
       console.log("in Verify Login and we arn't loged in");
       
@@ -118,7 +118,7 @@ module.exports = {
    getUserById: getUserById,
    createUser: createUser,
    getAllUsers: getAllUsers,
-   verifyLogin: verifyLogin,
+   checkLogin: checkLogin,
    login: login,
    logout: logout
 };

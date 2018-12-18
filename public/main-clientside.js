@@ -102,10 +102,10 @@ function addSport() {
        getAllUsersSports();
 }
 
-function verifyLogin() {
-   $.get("/verifyLogin", function(req, res) {
+function checkLogin() {
+   $.get("/checkLogin", function(req, res) {
 
-      console.log("inside of verify login with req:");
+      console.log("inside of check login with req:");
       console.log(req);
       if(req.success == false) {
          window.location.replace("/login.html");
