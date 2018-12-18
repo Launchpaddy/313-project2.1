@@ -112,7 +112,7 @@ function createUser(req, res) {
 
    console.log("in user Conrtroler with: " + display_name + ". username: " + username + ". password hash: " + hashedPassword);
 
-   userModel.createUser(display_name, username, hash, function(error, result) {
+   userModel.createUser(display_name, username, hashedPassword, function(error, result) {
       res.json(result);
    });
 
