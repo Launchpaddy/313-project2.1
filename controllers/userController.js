@@ -88,10 +88,10 @@ function logout( req, res) {
          
                   var sessionStuff = {
                      result: result,
-                     username: req.session.username,
-                     display_name: req.session.display_name,
-                     password: req.session.password,
-                     user_id: req.session.user_id
+                     username: req2.session.username,
+                     display_name: req2.session.display_name,
+                     password: req2.session.password,
+                     user_id: req2.session.user_id
                   };
                   console.log("session Stuff: " + sessionStuff);
                   res2.json(sessionStuff);
