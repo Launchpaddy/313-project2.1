@@ -37,7 +37,7 @@ function addSport(req, res) {
    console.log("anything in session?" + req.session.username + req.session.password);
    var user_id = req.session.user_id;
 
-   var name = req.query.name;
+   var name = req.body.sport_name;
    console.log("inside add sport with the name : " + name + "and user_id: "+ user_id );
    sportModel.addSport(user_id, name, function(error, result) {
       res.json(result);
