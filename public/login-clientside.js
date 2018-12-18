@@ -17,6 +17,7 @@ function createUser() {
    $.post("/createUser",params , function(data) {
          console.log("Back from creating user with : ");
          console.log(data);
+         window.location.replace("/login.html");
 
       });
       var string = "";
