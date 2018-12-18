@@ -20,11 +20,7 @@ function createUser() {
          window.location.replace("/login.html");
 
       });
-      var string = "";
-      string += '<label for="username"><b>Username</b></label><input type="text" id="username" placeholder="Enter Username"  required> <br>';
-      string += '<label for="password"><b>Password</b></label> <input type="password" id="password" placeholder="Enter Password" required><br> ';
-      string += '<button onclick="login()">Login</button>';
-      $("#loginForm").replaceWith(string);
+   
 }
 
 
