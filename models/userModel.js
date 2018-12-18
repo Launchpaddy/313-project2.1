@@ -5,38 +5,10 @@ const pool = new Pool({connectionString: connectionString});
 
 console.log("connectionString  = " + connectionString);
 
-
-function getAllUsers(callback) {
-   // body...
-   // var result = {
-   //    users: [
-   //    {id:1, name:"trevik0"},
-   //    {id:2, name:"trevik1"},
-   //    {id:3, name:"trevik2"},
-   //    {id:4, name:"trevik3"},
-   //    {id:5, name:"trevik4"},
-   //    {id:6, name:"trevik5"}
-   //    ]
-   // }
-   // callback(null, result);
-
-   console.log("searching db with: " + id);
-
-   var sql = 'SELECT * FROM users';
-
-   pool.query(sql, function(err, result) {
-
-      if (err) {
-
-         console.log(err);
-         callback(err, "Erro with DB");
-      }
-     console.log("Found result: " + JSON.stringify(result.rows));
-
-      callback(null, result.rows);
-   });
-}
-
+/*********************************************************
+* Once we are signed in we have an id to work with and get 
+* all the users data that way
+*********************************************************/
 function getUserById(id, callback) {
 
    console.log("searching db with: " + id);
@@ -59,10 +31,12 @@ function getUserById(id, callback) {
    });
 }
 
+/*********************************************************
+* inserts into our database 
+*********************************************************/
 function createUser(display_name, username, password, callback) {
    console.log("creating new user named: " + display_name + ". username: " + username + ". password: " + password);
-   // var result = {success: true, name: name};
-   // callback(null, result);
+
    var sql = "INSERT INTO users (display_name, username, password) VALUES ($1, $2, $3);";
 
    console.log(sql);
@@ -83,6 +57,9 @@ function createUser(display_name, username, password, callback) {
    });
 }
 
+/*********************************************************
+* Looks for a username and sends back the results
+*********************************************************/
 function verifyLogin(username, password, callback) {
    console.log("searching db for username: " + username + " password: " + password);
 

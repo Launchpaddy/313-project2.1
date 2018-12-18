@@ -10,7 +10,6 @@ const PORT = process.env.PORT || 5000;
 var app = express();
 
 var session = require("express-session");
-var parseurl = require('parseurl');
 
 app.use(session({
    secret: 'secret secret',
@@ -18,8 +17,6 @@ app.use(session({
    saveUninitialized: true
 }));
 
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
 
 app.use(express.static(path.join(__dirname + "/public")));
 app.use(express.json());

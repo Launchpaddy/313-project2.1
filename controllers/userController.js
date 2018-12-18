@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 /*********************************************************
-*
+* calls the model with the id
 *********************************************************/
 function getUserById(req, res) {
 
@@ -18,19 +18,7 @@ function getUserById(req, res) {
 
 
 /*********************************************************
-*
-*********************************************************/
-function getAllUsers(req, res) {
-
-   userModel.getAllUsers(function(error, result) {
-      res.json(result);
-   });
-
-}
-
-
-/*********************************************************
-*
+* This is a midle ware funciton that checks if we are loged in
 *********************************************************/
 function checkLogin(req, res, next) {
    
@@ -47,6 +35,9 @@ function checkLogin(req, res, next) {
    
 }
 
+/*********************************************************
+* Logs out of the sesion and lets the client know it is loged out
+*********************************************************/
 function logout( req, res) {
  
    var result = {success: false};
@@ -61,8 +52,11 @@ function logout( req, res) {
 
 }
 
-
- function login(req2, res2) {
+/*********************************************************
+* This is how we check to see if there is the user in the db
+* if they are we add them to the session
+*********************************************************/
+function login(req2, res2) {
    var username = req2.body.username;
    var password = req2.body.password;
    console.log("username: " + username);
@@ -111,7 +105,7 @@ function logout( req, res) {
 }
 
 /*********************************************************
-*
+* Hashes and salts password and makes a new user
 *********************************************************/
 function createUser(req, res) {
 
@@ -133,9 +127,6 @@ function createUser(req, res) {
 }
 
 
-/*********************************************************
-*
-*********************************************************/
 module.exports = {
    getUserById: getUserById,
    createUser: createUser,

@@ -1,28 +1,8 @@
 
-/**
-*
-*/
-function searchUserById() {
-   // body...
-   console.log("searchUserById");
-   var userId = $("#userId").val();
-   console.log("userId: " + userId);
-
-   $.get("/user", { userId: userId }, function(data) {
-      console.log("Back from the server with : ");
-      console.log(data);
-
-      for (var i = 0; i < data.length ; i++) {
-         var users = data[i];
-         $("#ulUsers").append("<li>" + users.id + " " + users.display_name +"</li>");
-         console.log(users);
-      }
-   });
-}
-
-/**
-*
-*/
+/*********************************************************
+* when we click on a sport we ant to go through all of its 
+* 
+*********************************************************/
 function searchSportById() {
    // body...
     console.log("searchSportById");
@@ -43,9 +23,9 @@ function searchSportById() {
    });
 }
 
-/**
+/*********************************************************
 *
-*/
+*********************************************************/
 function getAllUsersSports() {
 
    $.get("/sports", function(data) {
@@ -63,6 +43,9 @@ function getAllUsersSports() {
    }) ;
 }
 
+/*********************************************************
+*
+*********************************************************/
 function logOut() {
    
    
@@ -81,6 +64,9 @@ function logOut() {
    // }) ;
 }
 
+/*********************************************************
+*
+*********************************************************/
 function addSport() {
    console.log("inside of add Sport on client side");
 
@@ -103,6 +89,9 @@ function addSport() {
        getAllUsersSports();
 }
 
+/*********************************************************
+*
+*********************************************************/
 function checkLogin() {
    console.log("inside of check login");
 
@@ -117,6 +106,9 @@ function checkLogin() {
    });
 }
 
+/*********************************************************
+*
+*********************************************************/
 function addActivity() {
    console.log("add activity has been called now we need ot get data from form");
    
@@ -148,6 +140,9 @@ $.post("/addActivity", params, function(data) {
 
 }
 
+/*********************************************************
+*
+*********************************************************/
 function displaySport(sport_id, sport_name) {
    console.log("sport id: " + sport_id);
    console.log("sport name:" + sport_name);
