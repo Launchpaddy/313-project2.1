@@ -68,7 +68,7 @@ function logOut() {
    
    $.get("/logout", function(req, res) {
 
-      if(req == {logedIn: false}) {
+      if(req.success  == true) {
          window.location.replace("/login.html");
       } else {
          console.log("still loged in");

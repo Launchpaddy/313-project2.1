@@ -45,8 +45,16 @@ function verifyLogin(req, res, next) {
 }
 
 function logout( res, res) {
-   req.session.logedIn = false;
-   res.json({logedIn: false});
+ 
+   var result = {success: false};
+
+	
+	if (req.session.logedIn) {
+		request.session.destroy();
+		result = {success: true};
+	}
+
+	res.json(result);
 
 }
 
