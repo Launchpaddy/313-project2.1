@@ -1,28 +1,28 @@
 
 
-/*********************************************************
-* when we click on a sport we ant to go through all of its 
-* 
-*********************************************************/
-function searchSportById() {
-   // body...
-    console.log("searchSportById");
+// /*********************************************************
+// * when we want to show 
+// * 
+// *********************************************************/
+// function searchSportById() {
+//    // body...
+//     console.log("searchSportById");
 
-   var sportId = $("#sportId").val();
-   console.log("sportId: " + sportId);
-   //var params = [{sportId: sportId}];
+//    var sportId = $("#sportId").val();
+//    console.log("sportId: " + sportId);
+//    //var params = [{sportId: sportId}];
 
-   $.get("/sport", {sportId:sportId}, function(data) {
-      console.log("Back from the server with : ");
-      console.log(data);
+//    $.get("/sport", {sportId:sportId}, function(data) {
+//       console.log("Back from the server with : ");
+//       console.log(data);
 
-      for (var i = 0; i < data.length ; i++) {
-         var sports = data[i];
-         $("#ulUsers").append("<li>" + sports.id + " " + sports.name +"</li>");
-         console.log(sports);
-      }
-   });
-}
+//       for (var i = 0; i < data.length ; i++) {
+//          var sports = data[i];
+//          $("#ulUsers").append("<li>" + sports.id + " " + sports.name +"</li>");
+//          console.log(sports);
+//       }
+//    });
+// }
 
 /*********************************************************
 *
