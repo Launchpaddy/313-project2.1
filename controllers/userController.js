@@ -59,8 +59,8 @@ function logout( req, res) {
 
 
  function login(req, res) {
-   var username = req.query.username;
-   var password = req.query.password;
+   var username = req.body.username;
+   var password = req.body.password;
    console.log("username: " + username);
   
    userModel.verifyLogin(username, password,  function(error, result) {
