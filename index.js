@@ -23,23 +23,23 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extented: true })); //{extented:true}
 
-app.get("/user", userController.getUserById);
+app.get("/user", userController.verifyLogin, userController.getUserById);
 
-app.get("/verifyLogin", userController.verifyLogin);
+app.get("/verifyLogin", userController.login);
 
-app.get("/users", userController.getAllUsers);
+app.get("/users", userController.verifyLogin,  userController.getAllUsers);
 
-app.post("/createUser", userController.createUser);
-
-
-app.get("/getActivitiesBySportId", sportController.getActivitiesBySportId);
-
-app.get("/sports", sportController.getAllUsersSports);
-
-app.post("/addSport", sportController.addSport);
+app.post("/createUser", userController.verifyLogin, userController.createUser);
 
 
-app.post("/addActivity", activitesController.addActivity)
+app.get("/getActivitiesBySportId", userController.verifyLogin, sportController.getActivitiesBySportId);
+
+app.get("/sports", userController.verifyLogin, sportController.getAllUsersSports);
+
+app.post("/addSport", userController.verifyLogin, sportController.addSport);
+
+
+app.post("/addActivity", userController.verifyLogin, activitesController.addActivity)
 
 app.listen(PORT, function() {
    console.log("server listening on port :" + PORT);

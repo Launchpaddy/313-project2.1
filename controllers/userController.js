@@ -31,7 +31,18 @@ function getAllUsers(req, res) {
 /*********************************************************
 *
 *********************************************************/
-function verifyLogin(req, res) {
+function verifyLogin(req, res, next) {
+   if(!req.session.logedIn) {
+      res.json({success: true});
+   }
+   else {
+      
+      next();
+   }
+   
+}
+
+function login(req, res) {
    var username = req.query.username;
    var password = req.query.password;
    console.log("username: " + username);
@@ -62,9 +73,6 @@ function verifyLogin(req, res) {
          res.json({success: false});
       }
    })
-   
-
-
 }
 
 /*********************************************************
@@ -93,5 +101,6 @@ module.exports = {
    getUserById: getUserById,
    createUser: createUser,
    getAllUsers: getAllUsers,
-   verifyLogin: verifyLogin
+   verifyLogin: verifyLogin,
+   login: login
 };
