@@ -62,9 +62,9 @@ function logout( req, res) {
 }
 
 
- function login(req, res) {
-   var username = req.body.username;
-   var password = req.body.password;
+ function login(req2, res2) {
+   var username = req2.body.username;
+   var password = req2.body.password;
    console.log("username: " + username);
 
   
@@ -78,11 +78,11 @@ function logout( req, res) {
    
             
                   console.log("passed verify login and adding them to the session");
-                  req.session.logedIn = true;
-                  req.session.username = result[0].username;
-                  req.session.display_name = result[0].display_name;
-                  req.session.password = result[0].password;
-                  req.session.user_id = result[0].id; // this is from the db with query return * from user with id;
+                  req2.session.logedIn = true;
+                  req2.session.username = result[0].username;
+                  req2.session.display_name = result[0].display_name;
+                  req2.session.password = result[0].password;
+                  req2.session.user_id = result[0].id; // this is from the db with query return * from user with id;
                   console.log("results from verify login: ")
                   console.log(result[0]);
          
@@ -94,10 +94,10 @@ function logout( req, res) {
                      user_id: req.session.user_id
                   };
                   console.log("session Stuff: " + sessionStuff);
-                  res.json(sessionStuff);
+                  res2.json(sessionStuff);
          
                } else {
-                  res.json({success: false});
+                  res2.json({success: false});
                }
             }
             // res == true
