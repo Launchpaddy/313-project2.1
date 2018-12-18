@@ -67,7 +67,7 @@ function logout( req, res) {
    var password = req.body.password;
    console.log("username: " + username);
 
-   bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash) {
+   bcrypt.hash(password, saltRounds, function(err, hash) {
       // Store hash in your password DB.
       userModel.verifyLogin(username, hash,  function(error, result) {
          if (result[0] != null) {
