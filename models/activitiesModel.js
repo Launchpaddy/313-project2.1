@@ -5,6 +5,9 @@ const pool = new Pool({connectionString: connectionString});
 
 console.log("connectionString  = " + connectionString);
 
+/*********************************************************
+* Return from db all of the acivites with a sport id
+*********************************************************/
 function getActivitiesBySportId(sport_id, callback) {
 
     console.log("searching activies with sport id in model : " + sport_id);
@@ -27,19 +30,11 @@ function getActivitiesBySportId(sport_id, callback) {
     });
  }
  
-
+/*********************************************************
+* adds new activites to our db
+*********************************************************/
  function addActivity(name, date, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health, callback) {
 
-    // var name = params.name;
-    // var day = params.day;
-    // var place = params.place;
-    // var hour_duration = params.hour_duration;
-    // var inviroment_quality = params.inviroment_quality;
-    // var sport_id = params.sport_id;
-    // var performance_level = params.performance_level;
-    // var fun_level = params.fun_level;
-    // var health = params.health;
- 
     console.log("adding activity : " + name + "with day" + date);
  
     var sql = "INSERT INTO activities (name, day, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);";

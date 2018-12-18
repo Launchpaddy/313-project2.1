@@ -1,6 +1,8 @@
 const sportModel = require("../models/sportModel.js")
 
-
+/*********************************************************
+* calls the model
+*********************************************************/
 function getAllUsersSports(req, res) {
 
    var user_id = req.session.user_id;
@@ -13,6 +15,9 @@ function getAllUsersSports(req, res) {
 
 }
 
+/*********************************************************
+* calls the model
+*********************************************************/
 function getActivitiesBySportId(req, res) {
 
    // this needs a todo work
@@ -24,7 +29,9 @@ function getActivitiesBySportId(req, res) {
 
 }
 
-
+/*********************************************************
+* calls the model
+*********************************************************/
 function addSport(req, res) {
 
    console.log("anything in session?" + req.session.username + req.session.password);

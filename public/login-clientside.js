@@ -1,5 +1,6 @@
-
-
+/*********************************************************
+* When we want to create a new user
+*********************************************************/
 function createUser() {
    console.log("inside of create User on client side");
 
@@ -23,7 +24,9 @@ function createUser() {
    
 }
 
-
+/*********************************************************
+* Login in 
+*********************************************************/
 function login() {
    // body...
    console.log("inside of verify login");
@@ -42,7 +45,6 @@ function login() {
 
       if (data.username != null) {
 
-        // session.username = data[0].username;
          console.log(data.username);
 
          window.location.href = "/home.html";
@@ -50,7 +52,6 @@ function login() {
 
       } else {
          $("#h2").replaceWith("<h2>try again</h2>");
-         //$("#loginForm").replaceWith("<h2>try again</h2>");
 
       }
 
@@ -58,7 +59,10 @@ function login() {
 
 }
 
-
+/*********************************************************
+* if login in isn't an option yet give them the form 
+* to register for a new acount.
+*********************************************************/
 function register() {
    var string = "";
       string += '<label for="username"><b>New Username</b></label><input type="text" id="username" placeholder="Enter Username"  required> <br>';

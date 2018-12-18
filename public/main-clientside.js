@@ -1,31 +1,7 @@
 
-
-// /*********************************************************
-// * when we want to show 
-// * 
-// *********************************************************/
-// function searchSportById() {
-//    // body...
-//     console.log("searchSportById");
-
-//    var sportId = $("#sportId").val();
-//    console.log("sportId: " + sportId);
-//    //var params = [{sportId: sportId}];
-
-//    $.get("/sport", {sportId:sportId}, function(data) {
-//       console.log("Back from the server with : ");
-//       console.log(data);
-
-//       for (var i = 0; i < data.length ; i++) {
-//          var sports = data[i];
-//          $("#ulUsers").append("<li>" + sports.id + " " + sports.name +"</li>");
-//          console.log(sports);
-//       }
-//    });
-// }
-
 /*********************************************************
-*
+* We want to show all of our sport to the user
+* we give them the sport id for our use
 *********************************************************/
 function getAllUsersSports() {
 
@@ -45,7 +21,7 @@ function getAllUsersSports() {
 }
 
 /*********************************************************
-*
+* Call logout and takes us ot the login page
 *********************************************************/
 function logOut() {
    
@@ -60,13 +36,11 @@ function logOut() {
       }
 
    });
-   // $.post("/logOut", function(data) {
-   //    console.log("loging out");
-   // }) ;
 }
 
 /*********************************************************
-*
+* calls ad sport
+* when done it refreshes to sports
 *********************************************************/
 function addSport() {
    console.log("inside of add Sport on client side");
@@ -91,7 +65,7 @@ function addSport() {
 }
 
 /*********************************************************
-*
+* if we arnt' loged in we go back to the login page
 *********************************************************/
 function checkLogin() {
    console.log("inside of check login");
@@ -108,7 +82,7 @@ function checkLogin() {
 }
 
 /*********************************************************
-*
+* There is a lot of things we need but we want it all
 *********************************************************/
 function addActivity() {
    console.log("add activity has been called now we need ot get data from form");
@@ -142,7 +116,8 @@ $.post("/addActivity", params, function(data) {
 }
 
 /*********************************************************
-*
+* This also refreshes the whole page so we have our form
+* to add new sports as well as shows al the data in a table
 *********************************************************/
 function displaySport(sport_id, sport_name) {
    console.log("sport id: " + sport_id);

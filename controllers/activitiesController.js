@@ -1,5 +1,8 @@
 const activitiesModel = require("../models/activitiesModel.js");
 
+/*********************************************************
+* calls the model
+*********************************************************/
 function getActivitiesBySportId(req, res) { 
     console.log("inside activities controller : ");
     var sport_id = req.query.sport_id;
@@ -9,6 +12,9 @@ function getActivitiesBySportId(req, res) {
     })
 }
 
+/*********************************************************
+* calls the model
+*********************************************************/
 function addActivity(req, res)  {
 
     console.log("inside add activites controller");
@@ -33,7 +39,6 @@ function addActivity(req, res)  {
 
     console.log(name + date + place + hour_duration );
     
-    var params = [name, date, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health];
     activitiesModel.addActivity(name, date, place, hour_duration, inviroment_quality, sport_id, performance_level, fun_level, health, function (errro, result) {
         res.json(result);
     })

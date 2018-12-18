@@ -6,7 +6,9 @@ const pool = new Pool({connectionString: connectionString});
 console.log("connectionString  = " + connectionString);
 
 
-
+/*********************************************************
+* Querys the database fro all of a users sports by id
+*********************************************************/
 function getAllUsersSports(user_id, callback) {
 
    console.log("searching sport with id in model : " + user_id);
@@ -28,7 +30,10 @@ function getAllUsersSports(user_id, callback) {
    });
 }
 
-
+/*********************************************************
+* Once we have a sport we can click on it do get 
+* all of its activites
+*********************************************************/
 function getActivityBySportId(id, callback) {
 
    console.log("searching for activites in model wiht sport id: " + id);
@@ -51,6 +56,9 @@ function getActivityBySportId(id, callback) {
    });
 }
 
+/*********************************************************
+* Adding new sports to our db
+*********************************************************/
 function addSport(user_id, name, callback) {
 
    console.log("addingSport : " + name + "to user_id" + user_id);
