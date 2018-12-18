@@ -6,7 +6,7 @@ const pool = new Pool({connectionString: connectionString});
 console.log("connectionString  = " + connectionString);
 
 /*********************************************************
-* Return from db all of the acivites with a sport id
+* Return from db all of the acivites with a certain sport id
 *********************************************************/
 function getActivitiesBySportId(sport_id, callback) {
 
