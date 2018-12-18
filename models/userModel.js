@@ -86,10 +86,10 @@ function createUser(display_name, username, password, callback) {
 function verifyLogin(username, password, callback) {
    console.log("searching db for username: " + username + " password: " + password);
 
-   var sql = 'SELECT * FROM users WHERE username = $1 AND password = $2';
+   var sql = 'SELECT * FROM users WHERE username = $1';
 
 
-   var params = [username, password];
+   var params = [username];
 
 
    pool.query(sql, params, function(err, result) {
