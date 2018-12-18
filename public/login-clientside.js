@@ -17,9 +17,12 @@ function createUser() {
    $.post("/createUser",params , function(data) {
          console.log("Back from creating user with : ");
          console.log(data);
-   
-         $("#loginForm").replaceWith('<label for="username"><b>New Username</b></label><input type="text" id="username" placeholder="Enter Username"  required> <br> <label for="password"><b>Password</b></label>    <input type="password" id="password" placeholder="Enter Password" required><br>    <button onclick="verifyLogin()">Lerify Login</button>');
-       
+
+         var string = "";
+         string += '<label for="username"><b>Username</b></label><input type="text" id="username" placeholder="Enter Username"  required> <br>';
+         string += '<label for="password"><b>Password</b></label> <input type="password" id="password" placeholder="Enter Password" required><br> ';
+         string += '<button onclick="login()">Login</button>';
+         $("#loginForm").replaceWith(string);
        });
 }
 
