@@ -28,6 +28,7 @@ app.get("/user", userController.verifyLogin, userController.getUserById);
 app.get("/login", userController.login);
 
 app.get("/logout", userController.logout);
+app.get("/verifyLogin", userController.verifyLogin);
 
 app.get("/users", userController.verifyLogin,  userController.getAllUsers);
 
