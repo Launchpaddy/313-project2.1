@@ -30,7 +30,6 @@ app.post("/logout", userController.logout);
 
 app.post("/checkLogin", userController.checkLogin);
 
-app.get("/users",  userController.getAllUsers);
 
 app.post("/createUser", userController.createUser);
 
