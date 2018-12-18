@@ -21,8 +21,7 @@ app.use(session({
 app.use(express.static(path.join(__dirname + "/public")));
 app.use(express.json());
 
-app.use(express.urlencoded({ extented: true })); //{extented:true}
-
+app.use(express.urlencoded({extented: true})); //{extented:true} 
 app.get("/user", userController.checkLogin, userController.getUserById);
 
 app.post("/login", userController.login);

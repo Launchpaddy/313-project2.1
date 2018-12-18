@@ -105,15 +105,16 @@ function addSport() {
 
 function checkLogin() {
    console.log("inside of check login");
-   $.post("/checkLogin", function(result) {
 
-      console.log("inside of check login with req:");
-      console.log(result);
-      if(result.success == false) {
-         window.location.replace("/login.html");
-      }
+   // $.post("/checkLogin", function(result) {
 
-   });
+   //    console.log("inside of check login with req:");
+   //    console.log(result);
+   //    if(result.success == false) {
+   //       window.location.replace("/login.html");
+   //    }
+
+   // });
 }
 
 function addActivity() {
