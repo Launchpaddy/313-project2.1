@@ -70,7 +70,7 @@ function logout( req, res) {
   
    userModel.verifyLogin(username, password,  function(error, result) {
 
-      for(var i = 0; i < result.size();i++ ) {
+      for(var i = 0; i < result.length;i++ ) {
          bcrypt.compare(password, result[i].password, function(err, res) {
 
             if(res == true) {
