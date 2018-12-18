@@ -25,7 +25,7 @@ function createUser() {
 }
 
 
-function verifyLogin() {
+function login() {
    // body...
    console.log("inside of verify login");
 
