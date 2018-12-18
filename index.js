@@ -29,7 +29,7 @@ app.post("/login", userController.login);
 
 app.post("/logout", userController.logout);
 
-app.get("/checkLogin", userController.checkLogin);
+app.post("/checkLogin", userController.checkLogin);
 
 app.get("/users", userController.checkLogin,  userController.getAllUsers);
 

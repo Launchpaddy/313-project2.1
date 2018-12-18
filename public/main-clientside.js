@@ -105,11 +105,11 @@ function addSport() {
 
 function checkLogin() {
    console.log("inside of check login");
-   $.get("/checkLogin", function(req, res) {
+   $.post("/checkLogin", function(result) {
 
       console.log("inside of check login with req:");
-      console.log(req);
-      if(req.success == false) {
+      console.log(result);
+      if(result.success == false) {
          window.location.replace("/login.html");
       }
 
