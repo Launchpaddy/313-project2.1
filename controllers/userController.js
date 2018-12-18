@@ -52,7 +52,7 @@ function login(req, res) {
 
          
          console.log("passed verify login and adding them to the session");
-         
+         req.session.logedIn = true;
          req.session.username = result[0].username;
          req.session.display_name = result[0].display_name;
          req.session.password = result[0].password;
