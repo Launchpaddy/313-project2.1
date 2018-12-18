@@ -67,38 +67,42 @@ function logout( req, res) {
    var password = req.body.password;
    console.log("username: " + username);
 
-   bcrypt.hash(password, saltRounds, function(err, hash) {
-      // Store hash in your password DB.
-      userModel.verifyLogin(username, hash,  function(error, result) {
-         if (result[0] != null) {
-   
-            
-            console.log("passed verify login and adding them to the session");
-            req.session.logedIn = true;
-            req.session.username = result[0].username;
-            req.session.display_name = result[0].display_name;
-            req.session.password = result[0].password;
-            req.session.user_id = result[0].id; // this is from the db with query return * from user with id;
-            console.log("results from verify login: ")
-            console.log(result[0]);
-   
-            var sessionStuff = {
-               result: result,
-               username: req.session.username,
-               display_name: req.session.display_name,
-               password: req.session.password,
-               user_id: req.session.user_id
-            };
-            console.log("session Stuff: " + sessionStuff);
-            res.json(sessionStuff);
-   
-         } else {
-            res.json({success: false});
-         }
-      })
-    });
   
-   
+   userModel.verifyLogin(username, password,  function(error, result) {
+
+      bcrypt.compare(password, result.password, function(err, res) {
+
+         if(res == true) {
+            if (result[0] != null) {
+
+         
+               console.log("passed verify login and adding them to the session");
+               req.session.logedIn = true;
+               req.session.username = result[0].username;
+               req.session.display_name = result[0].display_name;
+               req.session.password = result[0].password;
+               req.session.user_id = result[0].id; // this is from the db with query return * from user with id;
+               console.log("results from verify login: ")
+               console.log(result[0]);
+      
+               var sessionStuff = {
+                  result: result,
+                  username: req.session.username,
+                  display_name: req.session.display_name,
+                  password: req.session.password,
+                  user_id: req.session.user_id
+               };
+               console.log("session Stuff: " + sessionStuff);
+               res.json(sessionStuff);
+      
+            } else {
+               res.json({success: false});
+            }
+         }
+         // res == true
+      });
+      
+   })
 }
 
 /*********************************************************
