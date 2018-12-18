@@ -25,9 +25,9 @@ app.use(express.urlencoded({ extented: true })); //{extented:true}
 
 app.get("/user", userController.verifyLogin, userController.getUserById);
 
-app.get("/login", userController.login);
+app.post("/login", userController.login);
 
-app.get("/logout", userController.logout);
+app.post("/logout", userController.logout);
 
 app.get("/verifyLogin", userController.verifyLogin);
 

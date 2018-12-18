@@ -37,7 +37,7 @@ function login() {
    var params = {username:username, password:password};
 
 
-   $.get("/login",params , function(data) {
+   $.post("/login",params , function(data) {
       console.log("Back from the server with : ");
       console.log(data);
 

@@ -66,9 +66,9 @@ function getAllUsersSports() {
 function logOut() {
    
    
-   $.get("/logout", function(req, res) {
+   $.post("/logout", function(result) {
 
-      if(req.success  == true) {
+      if(result.success  == true) {
          window.location.replace("/login.html");
       } else {
          console.log("still loged in");
@@ -107,7 +107,7 @@ function verifyLogin() {
 
       console.log("inside of verify login with req:");
       console.log(req);
-      if(req.success ==  false) {
+      if(req.success == false) {
          window.location.replace("/login.html");
       }
 
