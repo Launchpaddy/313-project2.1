@@ -33,6 +33,7 @@ function getAllUsers(req, res) {
 *********************************************************/
 function verifyLogin(req, res, next) {
    if(!req.session.logedIn) {
+      console.log("in Verify Login and we arn't loged in");
       
       res.json({success: false});
    }
@@ -48,6 +49,7 @@ function logout( res, res) {
    res.json({logedIn: false});
 
 }
+
 
  function login(req, res) {
    var username = req.query.username;
