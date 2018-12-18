@@ -71,6 +71,7 @@ function logout( req, res) {
    userModel.verifyLogin(username, password,  function(error, result) {
 
       for(var i = 0; i < result.length;i++ ) {
+         console.log("looping through possible people number: " + i);
          bcrypt.compare(password, result[i].password, function(err, res) {
 
             if(res == true) {
@@ -104,7 +105,7 @@ function logout( req, res) {
          });
          
       }
-      res2.json({success: false});
+      //res2.json({success: false});
       
    })
 }
