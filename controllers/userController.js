@@ -73,7 +73,8 @@ function logout( req, res) {
          req.session.display_name = result[0].display_name;
          req.session.password = result[0].password;
          req.session.user_id = result[0].id; // this is from the db with query return * from user with id;
-         console.log("results from verify login: " + result[0])
+         console.log("results from verify login: ")
+         console.log(result[0]);
 
          var sessionStuff = {
             result: result,
