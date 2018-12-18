@@ -35,16 +35,15 @@ function verifyLogin(req, res, next) {
    if(!req.session.logedIn) {
       console.log("in Verify Login and we arn't loged in");
       
-      res.json({success: false});
+      res.status(401).json({success: false});
    }
-   else {
-      
+   else {  
       next();
    }
    
 }
 
-function logout( res, res) {
+function logout( req, res) {
  
    var result = {success: false};
 
