@@ -93,7 +93,7 @@ function addActivity() {
    var hour_duration = $("#duration").val();
    var inviroment_quality = $("#quality").val();
    var sport_id = $("#sport_id").val();
-   var sport_name = $("sport_name").val();
+   var sport_name = $("#sport_name").val();
    var performance_level = $("#performance").val();
    var fun_level = $("#fun").val();
    var health = $("#health").val();
