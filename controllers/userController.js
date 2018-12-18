@@ -1,5 +1,6 @@
 const userModel = require("../models/userModel.js");
-
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 /*********************************************************
 *
@@ -103,11 +104,15 @@ function createUser(req, res) {
    var display_name = req.body.display_name;
    var username = req.body.username;
    var password = req.body.password;
-   
+   var hashedPassword = "";
+   bcrypt.hash(password, saltRounds, function(err, hash) {
+      // Store hash in your password DB.
+      hashedPassword = hash;
+    });
 
-   console.log("in user Conrtroler with: " + display_name + ". username: " + username + ". password: " + password);
+   console.log("in user Conrtroler with: " + display_name + ". username: " + username + ". password hash: " + hash);
 
-   userModel.createUser(display_name, username, password, function(error, result) {
+   userModel.createUser(display_name, username, hash, function(error, result) {
       res.json(result);
    });
 
