@@ -36,7 +36,8 @@ function checkLogin(req, res, next) {
    if(!req.session.logedIn) {
       console.log("in Verify Login and we arn't loged in");
       
-      res.status(401).json({success: true});
+      res.status(401).json({success: false});
+      next();
    }
    else {  
       next();
