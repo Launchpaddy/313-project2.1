@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname + "/public")));
 app.use(express.json());
 
 app.use(express.urlencoded({extented: true})); //{extented:true} 
-app.get("/user", userController.checkLogin, userController.getUserById);
+app.get("/user",  userController.getUserById);
 
 app.post("/login", userController.login);
 
@@ -30,19 +30,19 @@ app.post("/logout", userController.logout);
 
 app.post("/checkLogin", userController.checkLogin);
 
-app.get("/users", userController.checkLogin,  userController.getAllUsers);
+app.get("/users",  userController.getAllUsers);
 
-app.post("/createUser", userController.checkLogin, userController.createUser);
-
-
-app.get("/getActivitiesBySportId", userController.checkLogin, sportController.getActivitiesBySportId);
-
-app.get("/sports", userController.checkLogin, sportController.getAllUsersSports);
-
-app.post("/addSport", userController.checkLogin, sportController.addSport);
+app.post("/createUser", userController.createUser);
 
 
-app.post("/addActivity", userController.checkLogin, activitesController.addActivity)
+app.get("/getActivitiesBySportId",sportController.getActivitiesBySportId);
+
+app.get("/sports",sportController.getAllUsersSports);
+
+app.post("/addSport", sportController.addSport);
+
+
+app.post("/addActivity", activitesController.addActivity)
 
 app.listen(PORT, function() {
    console.log("server listening on port :" + PORT);
